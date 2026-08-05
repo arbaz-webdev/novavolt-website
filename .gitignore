@@ -1,0 +1,15 @@
+# OS
+Thumbs.db
+.DS_Store
+desktop.ini
+
+# Editors
+.vscode/
+.idea/
+
+# Builds / archives
+*.zip
+node_modules/
+
+# Client source docs (keep out of public repo)
+*.docx
