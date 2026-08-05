@@ -1,22 +1,37 @@
-/* NovaVolt — reveal-on-scroll progressive enhancement */
+/* NovaVolt — progressive enhancements.
+   Markup stays fully editable; every effect fails open (content is never hidden). */
 (function () {
   'use strict';
-  var els = document.querySelectorAll('.nv-reveal');
-  if (!els.length) return;
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  if (!('IntersectionObserver' in window)) {
-    els.forEach(function (el) { el.classList.add('is-visible'); });
-    return;
-  }
+  /* 1. Pulsing "live" dot — replaces a leading bullet inside .nv-live */
+  document.querySelectorAll('.nv-live').forEach(function (el) {
+    if (el.dataset.nvDot) return;
+    el.dataset.nvDot = '1';
+    el.innerHTML = el.innerHTML.replace(/^\s*●\s*/, '<span class="nv-livedot" aria-hidden="true"></span>');
+  });
 
-  var io = new IntersectionObserver(function (entries) {
-    entries.forEach(function (entry) {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('is-visible');
-        io.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+  /* 2. Logo marquee — wraps whatever logos the editor has entered.
+        Duplicates the row once so the loop is seamless. */
+  if (reduce) return;
+  var logos = document.querySelectorAll('p.nv-logo');
+  if (logos.length < 4) return;
+  var row = logos[0].parentElement;
+  if (!row || row.dataset.nvMarquee) return;
+  row.dataset.nvMarquee = '1';
 
-  els.forEach(function (el) { io.observe(el); });
+  var track = document.createElement('div');
+  track.className = 'nv-mtrack';
+  while (row.firstChild) { track.appendChild(row.firstChild); }
+
+  var clone = track.cloneNode(true);
+  clone.setAttribute('aria-hidden', 'true');
+
+  var scroller = document.createElement('div');
+  scroller.className = 'nv-mscroll';
+  scroller.appendChild(track);
+  scroller.appendChild(clone);
+
+  row.classList.add('nv-marquee');
+  row.appendChild(scroller);
 })();
