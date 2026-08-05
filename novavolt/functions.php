@@ -10,9 +10,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 if ( ! function_exists( 'novavolt_setup' ) ) {
-	/**
-	 * Theme support.
-	 */
 	function novavolt_setup() {
 		add_theme_support( 'wp-block-styles' );
 		add_theme_support( 'responsive-embeds' );
@@ -31,27 +28,19 @@ if ( ! function_exists( 'novavolt_setup' ) ) {
 }
 add_action( 'after_setup_theme', 'novavolt_setup' );
 
-/**
- * Enqueue front-end assets: Inter webfont + the custom polish stylesheet.
- */
 function novavolt_enqueue_assets() {
-	// Google Fonts — Inter.
 	wp_enqueue_style(
 		'novavolt-fonts',
 		'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap',
 		array(),
 		null
 	);
-
-	// Main theme stylesheet (contains the /* Theme Name */ header + polish layer).
 	wp_enqueue_style(
 		'novavolt-style',
 		get_stylesheet_uri(),
 		array( 'novavolt-fonts' ),
 		wp_get_theme()->get( 'Version' )
 	);
-
-	// Tiny scroll-reveal enhancement (no dependencies).
 	wp_enqueue_script(
 		'novavolt-reveal',
 		get_theme_file_uri( 'assets/js/reveal.js' ),
@@ -62,9 +51,6 @@ function novavolt_enqueue_assets() {
 }
 add_action( 'wp_enqueue_scripts', 'novavolt_enqueue_assets' );
 
-/**
- * Preconnect to Google Fonts for faster loading.
- */
 function novavolt_resource_hints( $hints, $relation_type ) {
 	if ( 'preconnect' === $relation_type ) {
 		$hints[] = array( 'href' => 'https://fonts.gstatic.com', 'crossorigin' );
@@ -73,9 +59,6 @@ function novavolt_resource_hints( $hints, $relation_type ) {
 }
 add_filter( 'wp_resource_hints', 'novavolt_resource_hints', 10, 2 );
 
-/**
- * Register a block pattern category so NovaVolt sections group together.
- */
 function novavolt_register_pattern_category() {
 	if ( function_exists( 'register_block_pattern_category' ) ) {
 		register_block_pattern_category(
@@ -85,3 +68,50 @@ function novavolt_register_pattern_category() {
 	}
 }
 add_action( 'init', 'novavolt_register_pattern_category' );
+
+/**
+ * Fallback registration for the integrations & security patterns.
+ * Skipped automatically when the /patterns directory files are present
+ * (file-based patterns register earlier and win).
+ */
+function novavolt_register_inline_patterns() {
+	if ( ! function_exists( 'register_block_pattern' ) || ! class_exists( 'WP_Block_Patterns_Registry' ) ) {
+		return;
+	}
+	$registry = WP_Block_Patterns_Registry::get_instance();
+
+	if ( ! $registry->is_registered( 'novavolt/integrations' ) ) {
+		$file = get_theme_file_path( 'patterns/integrations.php' );
+		if ( file_exists( $file ) ) {
+			ob_start();
+			include $file;
+			register_block_pattern(
+				'novavolt/integrations',
+				array(
+					'title'       => __( 'Integrations', 'novavolt' ),
+					'description' => __( 'Integration pills built from editable buttons.', 'novavolt' ),
+					'categories'  => array( 'novavolt' ),
+					'content'     => ob_get_clean(),
+				)
+			);
+		}
+	}
+
+	if ( ! $registry->is_registered( 'novavolt/security' ) ) {
+		$file = get_theme_file_path( 'patterns/security.php' );
+		if ( file_exists( $file ) ) {
+			ob_start();
+			include $file;
+			register_block_pattern(
+				'novavolt/security',
+				array(
+					'title'       => __( 'Security & Reliability', 'novavolt' ),
+					'description' => __( 'Dark band with four editable security cards.', 'novavolt' ),
+					'categories'  => array( 'novavolt' ),
+					'content'     => ob_get_clean(),
+				)
+			);
+		}
+	}
+}
+add_action( 'init', 'novavolt_register_inline_patterns', 20 );
