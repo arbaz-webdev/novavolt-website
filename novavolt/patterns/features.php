@@ -66,7 +66,7 @@
 				<!-- /wp:columns -->
 				<!-- wp:group {"style":{"spacing":{"padding":"1.25rem","blockGap":"0.35rem"},"border":{"radius":"14px"},"color":{"background":"rgba(255,255,255,0.08)"}},"layout":{"type":"constrained"}} -->
 				<div class="wp-block-group has-background" style="border-radius:14px;background:rgba(255,255,255,0.08);padding:1.25rem">
-					<!-- wp:paragraph {"style":{"color":{"text":"#ffffff"},"typography":{"fontWeight":"600"}}} --><p style="color:#ffffff;font-weight:600">📊 &nbsp;Live call dashboard</p><!-- /wp:paragraph -->
+					<!-- wp:paragraph {"style":{"color":{"text":"#ffffff"},"typography":{"fontWeight":"600"}}} --><p style="color:#ffffff;font-weight:600">Live call dashboard</p><!-- /wp:paragraph -->
 					<!-- wp:paragraph {"style":{"color":{"text":"rgba(255,255,255,0.7)"},"typography":{"fontSize":"0.9rem"}}} --><p style="color:rgba(255,255,255,0.7);font-size:0.9rem">See every call, message, and booking across your team in real time.</p><!-- /wp:paragraph -->
 				</div>
 				<!-- /wp:group -->

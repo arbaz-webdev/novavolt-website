@@ -45,7 +45,7 @@
 <!-- wp:group {"className":"nv-mockwrap","layout":{"type":"constrained"}} -->
 <div class="wp-block-group nv-mockwrap">
 <!-- wp:paragraph {"className":"nv-chip nv-float nv-float-tr"} -->
-<p class="nv-chip nv-float nv-float-tr">⚡ 99.99% uptime</p>
+<p class="nv-chip nv-float nv-float-tr has-ico ico-bolt">99.99% uptime</p>
 <!-- /wp:paragraph -->
 <!-- wp:group {"className":"nv-mockup","style":{"spacing":{"blockGap":"0"}},"layout":{"type":"constrained"}} -->
 <div class="wp-block-group nv-mockup">
@@ -111,7 +111,7 @@
 </div>
 <!-- /wp:group -->
 <!-- wp:paragraph {"className":"nv-chip nv-float nv-float-bl"} -->
-<p class="nv-chip nv-float nv-float-bl">☁ 24/7 AI coverage</p>
+<p class="nv-chip nv-float nv-float-bl has-ico ico-cloud">24/7 AI coverage</p>
 <!-- /wp:paragraph -->
 </div>
 <!-- /wp:group -->

@@ -27,7 +27,7 @@
 
 		<!-- wp:group {"className":"nv-card","style":{"spacing":{"padding":"1.85rem","blockGap":"0.7rem"}},"layout":{"type":"constrained"}} -->
 		<div class="wp-block-group nv-card" style="padding:1.85rem">
-			<!-- wp:paragraph {"className":"nv-icon"} --><p class="nv-icon">📞</p><!-- /wp:paragraph -->
+			<!-- wp:html --><span class="nv-icon"><svg class="nv-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6.5 3h3l1.6 4-2.1 1.5a12.5 12.5 0 0 0 5.5 5.5L16 11.9l4 1.6v3a2 2 0 0 1-2.2 2A16.6 16.6 0 0 1 3.5 5.2 2 2 0 0 1 5.5 3z"/></svg></span><!-- /wp:html -->
 			<!-- wp:heading {"level":3,"fontSize":"large"} --><h3 class="wp-block-heading has-large-font-size">Business Phone Systems</h3><!-- /wp:heading -->
 			<!-- wp:paragraph {"style":{"color":{"text":"#64748b"}}} --><p style="color:#64748b">A cloud phone system that works anywhere your team does — desk, mobile, or browser, with numbers in every U.S. area code.</p><!-- /wp:paragraph -->
 			<!-- wp:paragraph --><p><a href="/services/" style="font-weight:600">Learn more →</a></p><!-- /wp:paragraph -->
@@ -36,7 +36,7 @@
 
 		<!-- wp:group {"className":"nv-card","style":{"spacing":{"padding":"1.85rem","blockGap":"0.7rem"}},"layout":{"type":"constrained"}} -->
 		<div class="wp-block-group nv-card" style="padding:1.85rem">
-			<!-- wp:paragraph {"className":"nv-icon"} --><p class="nv-icon">🌐</p><!-- /wp:paragraph -->
+			<!-- wp:html --><span class="nv-icon"><svg class="nv-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a15 15 0 0 1 0 18a15 15 0 0 1 0-18z"/></svg></span><!-- /wp:html -->
 			<!-- wp:heading {"level":3,"fontSize":"large"} --><h3 class="wp-block-heading has-large-font-size">VoIP &amp; Unified Communications</h3><!-- /wp:heading -->
 			<!-- wp:paragraph {"style":{"color":{"text":"#64748b"}}} --><p style="color:#64748b">Crystal-clear voice, video, and conferencing on one reliable network — no legacy hardware, no dropped calls.</p><!-- /wp:paragraph -->
 			<!-- wp:paragraph --><p><a href="/services/" style="font-weight:600">Learn more →</a></p><!-- /wp:paragraph -->
@@ -45,7 +45,7 @@
 
 		<!-- wp:group {"className":"nv-card","style":{"spacing":{"padding":"1.85rem","blockGap":"0.7rem"}},"layout":{"type":"constrained"}} -->
 		<div class="wp-block-group nv-card" style="padding:1.85rem">
-			<!-- wp:paragraph {"className":"nv-icon"} --><p class="nv-icon">🤖</p><!-- /wp:paragraph -->
+			<!-- wp:html --><span class="nv-icon"><svg class="nv-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="4" y="8" width="16" height="11" rx="3"/><path d="M12 8V4.5M9.5 13h.01M14.5 13h.01M9.5 16h5"/><circle cx="12" cy="3.5" r="1.2"/></svg></span><!-- /wp:html -->
 			<!-- wp:heading {"level":3,"fontSize":"large"} --><h3 class="wp-block-heading has-large-font-size">AI Receptionist &amp; Automation</h3><!-- /wp:heading -->
 			<!-- wp:paragraph {"style":{"color":{"text":"#64748b"}}} --><p style="color:#64748b">An always-on AI answers, routes, and books appointments 24/7 — so every caller reaches the right place instantly.</p><!-- /wp:paragraph -->
 			<!-- wp:paragraph --><p><a href="/services/" style="font-weight:600">Learn more →</a></p><!-- /wp:paragraph -->
@@ -54,7 +54,7 @@
 
 		<!-- wp:group {"className":"nv-card","style":{"spacing":{"padding":"1.85rem","blockGap":"0.7rem"}},"layout":{"type":"constrained"}} -->
 		<div class="wp-block-group nv-card" style="padding:1.85rem">
-			<!-- wp:paragraph {"className":"nv-icon"} --><p class="nv-icon">📈</p><!-- /wp:paragraph -->
+			<!-- wp:html --><span class="nv-icon"><svg class="nv-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 19V5M4 19h16"/><polyline points="7,15 11,11 14,13.5 19.5,7.5"/><polyline points="19.5,11 19.5,7.5 16,7.5"/></svg></span><!-- /wp:html -->
 			<!-- wp:heading {"level":3,"fontSize":"large"} --><h3 class="wp-block-heading has-large-font-size">Customer Engagement &amp; Sales</h3><!-- /wp:heading -->
 			<!-- wp:paragraph {"style":{"color":{"text":"#64748b"}}} --><p style="color:#64748b">Follow up faster with smart call logging, click-to-dial, and insights that help your team close more deals.</p><!-- /wp:paragraph -->
 			<!-- wp:paragraph --><p><a href="/services/" style="font-weight:600">Learn more →</a></p><!-- /wp:paragraph -->
@@ -63,7 +63,7 @@
 
 		<!-- wp:group {"className":"nv-card","style":{"spacing":{"padding":"1.85rem","blockGap":"0.7rem"}},"layout":{"type":"constrained"}} -->
 		<div class="wp-block-group nv-card" style="padding:1.85rem">
-			<!-- wp:paragraph {"className":"nv-icon"} --><p class="nv-icon">💬</p><!-- /wp:paragraph -->
+			<!-- wp:html --><span class="nv-icon"><svg class="nv-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M15.5 13.5H8L4.5 16.5V6a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v5.5a2 2 0 0 1-2 2z"/><path d="M8.5 17.5v.5a2 2 0 0 0 2 2h5l3.5 3V13"/></svg></span><!-- /wp:html -->
 			<!-- wp:heading {"level":3,"fontSize":"large"} --><h3 class="wp-block-heading has-large-font-size">Business Messaging &amp; Collaboration</h3><!-- /wp:heading -->
 			<!-- wp:paragraph {"style":{"color":{"text":"#64748b"}}} --><p style="color:#64748b">SMS, team chat, and shared inboxes keep customers and colleagues on the same thread — never lost in email.</p><!-- /wp:paragraph -->
 			<!-- wp:paragraph --><p><a href="/services/" style="font-weight:600">Learn more →</a></p><!-- /wp:paragraph -->
@@ -72,7 +72,7 @@
 
 		<!-- wp:group {"className":"nv-card","style":{"spacing":{"padding":"1.85rem","blockGap":"0.7rem"}},"layout":{"type":"constrained"}} -->
 		<div class="wp-block-group nv-card" style="padding:1.85rem">
-			<!-- wp:paragraph {"className":"nv-icon"} --><p class="nv-icon">🛡️</p><!-- /wp:paragraph -->
+			<!-- wp:html --><span class="nv-icon"><svg class="nv-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3l7.5 3v5.5c0 4.5-3 8.2-7.5 9.5-4.5-1.3-7.5-5-7.5-9.5V6z"/><polyline points="9,12 11,14 15.5,9.5"/></svg></span><!-- /wp:html -->
 			<!-- wp:heading {"level":3,"fontSize":"large"} --><h3 class="wp-block-heading has-large-font-size">Security &amp; Reliability</h3><!-- /wp:heading -->
 			<!-- wp:paragraph {"style":{"color":{"text":"#64748b"}}} --><p style="color:#64748b">Enterprise-grade encryption and 99.99% uptime keep your communications protected and always available.</p><!-- /wp:paragraph -->
 			<!-- wp:paragraph --><p><a href="/services/" style="font-weight:600">Learn more →</a></p><!-- /wp:paragraph -->

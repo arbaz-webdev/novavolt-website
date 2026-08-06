@@ -7,7 +7,7 @@ Description: Custom enterprise block theme for NovaVolt Systems — modern busin
 Requires at least: 6.4
 Tested up to: 6.6
 Requires PHP: 7.4
-Version: 2.0.2
+Version: 2.1.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: novavolt
@@ -325,6 +325,29 @@ footer .wpcf7 .wpcf7-not-valid-tip,footer .wpcf7 .wpcf7-response-output{color:#8
 /* nv-reveal-note: scroll-reveal removed in 2.0.2 — the class may still exist in
    older pattern markup, so it must never hide content. */
 .nv-reveal{opacity:1!important;transform:none!important}
+
+/* ==========================================================================
+   Icons — inline SVG replaces emoji (2.1.0)
+   ========================================================================== */
+.nv-svg{width:26px;height:26px;display:block;stroke:currentColor}
+.nv-icon{display:inline-flex;align-items:center;justify-content:center;width:52px;height:52px;border-radius:14px;background:linear-gradient(135deg,rgba(43,127,196,.12),rgba(134,205,234,.20));color:#2B7FC4;margin-bottom:.35rem;transition:transform .25s cubic-bezier(.4,0,.2,1),background .25s,color .25s}
+.nv-card:hover .nv-icon{transform:translateY(-2px) scale(1.06);background:linear-gradient(135deg,#2B7FC4,#4FA3DE);color:#fff}
+.nv-card:hover .nv-icon .nv-svg{animation:nvicon .5s ease}
+@keyframes nvicon{0%{transform:rotate(-8deg) scale(.94)}60%{transform:rotate(4deg) scale(1.04)}100%{transform:none}}
+.nv-sec-icon{display:inline-flex;align-items:center;justify-content:center;width:46px;height:46px;border-radius:12px;background:rgba(134,205,234,.14);color:#86CDEA;margin-bottom:.55rem;transition:background .25s,color .25s,transform .25s}
+.nv-sec-card2:hover .nv-sec-icon{background:rgba(134,205,234,.26);color:#fff;transform:translateY(-2px)}
+.nv-sec-icon .nv-svg{width:24px;height:24px}
+/* chip icons (hero) */
+.nv-chip.has-ico::before{content:"";width:15px;height:15px;margin-right:.15rem;background:currentColor;-webkit-mask-repeat:no-repeat;mask-repeat:no-repeat;-webkit-mask-position:center;mask-position:center;-webkit-mask-size:contain;mask-size:contain;flex:none}
+.nv-chip.ico-bolt{color:#B8860B}
+.nv-chip.ico-bolt::before{-webkit-mask-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpolygon points='13,2.5 4.5,13.5 11,13.5 10.5,21.5 19.5,10.5 13,10.5' fill='black'/%3E%3C/svg%3E");mask-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpolygon points='13,2.5 4.5,13.5 11,13.5 10.5,21.5 19.5,10.5 13,10.5' fill='black'/%3E%3C/svg%3E");animation:nvflash 2.6s ease-in-out infinite}
+.nv-chip.ico-cloud{color:#2B7FC4}
+.nv-chip.ico-cloud::before{-webkit-mask-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7.5 18.5h9.8a3.7 3.7 0 0 0 .4-7.3A5.6 5.6 0 0 0 6.9 9.6a4.5 4.5 0 0 0 .6 8.9z' fill='black'/%3E%3C/svg%3E");mask-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7.5 18.5h9.8a3.7 3.7 0 0 0 .4-7.3A5.6 5.6 0 0 0 6.9 9.6a4.5 4.5 0 0 0 .6 8.9z' fill='black'/%3E%3C/svg%3E")}
+@keyframes nvflash{0%,88%,100%{opacity:1}92%{opacity:.35}96%{opacity:1}}
+@media(prefers-reduced-motion:reduce){
+.nv-chip.ico-bolt::before{animation:none}
+.nv-card:hover .nv-icon,.nv-card:hover .nv-icon .nv-svg,.nv-sec-card2:hover .nv-sec-icon{transform:none;animation:none}
+}
 
 /* FAQ (details) readability — force colors against plugin/UA overrides */
 .wp-block-details{color:#123C63!important}
