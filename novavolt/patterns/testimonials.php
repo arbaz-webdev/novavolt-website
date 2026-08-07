@@ -6,8 +6,8 @@
  * Description: Featured quote plus two testimonial cards, fully editable.
  */
 ?>
-<!-- wp:group {"tagName":"section","align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|60","bottom":"var:preset|spacing|60"}}},"layout":{"type":"constrained"}} -->
-<section class="wp-block-group alignfull" style="padding-top:var(--wp--preset--spacing--60);padding-bottom:var(--wp--preset--spacing--60)">
+<!-- wp:group {"tagName":"section","align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|70","bottom":"var:preset|spacing|70"}}},"layout":{"type":"constrained"}} -->
+<section class="wp-block-group alignfull" style="padding-top:var(--wp--preset--spacing--70);padding-bottom:var(--wp--preset--spacing--70)">
 <!-- wp:group {"style":{"spacing":{"blockGap":"0.5rem","margin":{"bottom":"var:preset|spacing|40"}}},"layout":{"type":"constrained","contentSize":"720px"}} -->
 <div class="wp-block-group" style="margin-bottom:var(--wp--preset--spacing--40)">
 <!-- wp:paragraph {"align":"center","className":"nv-kicker"} --><p class="has-text-align-center nv-kicker">Customer stories</p><!-- /wp:paragraph -->
