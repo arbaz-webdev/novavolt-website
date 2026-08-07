@@ -7,7 +7,7 @@ Description: Custom enterprise block theme for NovaVolt Systems — modern busin
 Requires at least: 6.4
 Tested up to: 6.6
 Requires PHP: 7.4
-Version: 2.1.0
+Version: 2.1.1
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: novavolt
@@ -325,6 +325,12 @@ footer .wpcf7 .wpcf7-not-valid-tip,footer .wpcf7 .wpcf7-response-output{color:#8
 /* nv-reveal-note: scroll-reveal removed in 2.0.2 — the class may still exist in
    older pattern markup, so it must never hide content. */
 .nv-reveal{opacity:1!important;transform:none!important}
+
+/* Seamless sections — remove the default block gap between full-width bands
+   (scoped to .alignfull so blog/post paragraph spacing is untouched) */
+.wp-block-post-content > .alignfull{margin-block-start:0!important;margin-block-end:0!important}
+.wp-site-blocks > main{margin-block-start:0!important}
+.wp-site-blocks > main > .wp-block-post-content{margin-block-start:0!important}
 
 /* ==========================================================================
    Icons — inline SVG replaces emoji (2.1.0)
