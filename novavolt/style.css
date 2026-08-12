@@ -7,7 +7,7 @@ Description: Custom enterprise block theme for NovaVolt Systems — modern busin
 Requires at least: 6.4
 Tested up to: 6.6
 Requires PHP: 7.4
-Version: 2.2.0
+Version: 3.7.1
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: novavolt
@@ -381,3 +381,393 @@ footer .wpcf7 .wpcf7-not-valid-tip,footer .wpcf7 .wpcf7-response-output{color:#8
 .wp-block-details summary{color:#123C63!important;font-weight:600;font-size:1.05rem;cursor:pointer}
 .wp-block-details summary::marker{color:#2B7FC4}
 .wp-block-details p{color:#475569!important}
+
+/* ==========================================================================
+   NovaVolt Design System v3 — depth, contrast, motion (3.0.0)
+   Used by the service pages (dark hero, bento grid, timeline) and the
+   upgraded homepage integrations tiles.
+   ========================================================================== */
+.nv-grad{background:linear-gradient(100deg,#4FA3DE 0%,#86CDEA 45%,#2B7FC4 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.nv-grad-dark{background:linear-gradient(100deg,#123C63 0%,#2B7FC4 55%,#4FA3DE 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+
+/* Dark hero */
+.nv-dhero{position:relative;overflow:hidden;background:#081A2F}
+.nv-dhero::before{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(900px 520px at 78% 6%,rgba(79,163,222,.42),transparent 62%),radial-gradient(700px 480px at 8% 96%,rgba(134,205,234,.24),transparent 60%),radial-gradient(500px 320px at 45% 40%,rgba(43,127,196,.20),transparent 70%)}
+.nv-dhero::after{content:"";position:absolute;inset:0;pointer-events:none;background-image:linear-gradient(rgba(255,255,255,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.045) 1px,transparent 1px);background-size:56px 56px;-webkit-mask-image:radial-gradient(circle at 70% 35%,#000 0%,transparent 72%);mask-image:radial-gradient(circle at 70% 35%,#000 0%,transparent 72%)}
+.nv-dhero > *{position:relative;z-index:2}
+.nv-dhero h1{color:#fff!important;letter-spacing:-.035em;line-height:1.04}
+.nv-crumb-d{font-size:.85rem;color:rgba(255,255,255,.5);margin:0 0 .9rem}
+.nv-crumb-d a{color:#86CDEA;text-decoration:none}
+.nv-badge{display:inline-flex;align-items:center;gap:.5rem;font-size:.76rem;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:#BFE4F7;padding:.5rem 1.05rem;border-radius:999px;background:rgba(134,205,234,.10);border:1px solid rgba(134,205,234,.28);margin:0 0 1.1rem}
+.nv-badge::before{content:"";width:6px;height:6px;border-radius:50%;background:#86CDEA;box-shadow:0 0 0 4px rgba(134,205,234,.18)}
+
+/* Glass panel */
+.nv-glass{background:linear-gradient(160deg,rgba(255,255,255,.12),rgba(255,255,255,.05));border:1px solid rgba(255,255,255,.16);border-radius:20px;padding:1.9rem;backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);box-shadow:0 30px 70px -30px rgba(0,0,0,.65)}
+.nv-glass h3{color:#fff;font-size:1.05rem;margin:0 0 1rem}
+.nv-glist{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:.8rem}
+.nv-glist li{display:flex;gap:.7rem;align-items:flex-start;color:rgba(255,255,255,.82);font-size:.97rem;line-height:1.5}
+.nv-glist li::before{content:"";flex:none;width:21px;height:21px;margin-top:.1rem;border-radius:50%;background:rgba(134,205,234,.18) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2386CDEA' stroke-width='2.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6,12.5 10,16.5 18,7.5'/%3E%3C/svg%3E") center/13px no-repeat}
+.nv-gkv{display:flex;gap:1.8rem;margin-top:1.4rem;padding-top:1.2rem;border-top:1px solid rgba(255,255,255,.14)}
+.nv-gkv div{display:flex;flex-direction:column}
+.nv-gkv strong{font-size:1.5rem;color:#fff;letter-spacing:-.03em;line-height:1}
+.nv-gkv span{font-size:.72rem;color:rgba(255,255,255,.55);margin-top:.25rem}
+
+/* Bento grid */
+.nv-bento{display:grid;grid-template-columns:repeat(6,1fr);gap:1.25rem}
+.nv-bento > *{grid-column:span 2}
+.nv-bento > .b-wide{grid-column:span 3}
+.nv-bento > .b-hero{grid-column:span 6}
+@media(max-width:1100px){.nv-bento{grid-template-columns:repeat(4,1fr)}.nv-bento > *{grid-column:span 2}.nv-bento > .b-wide,.nv-bento > .b-hero{grid-column:span 4}}
+@media(max-width:700px){.nv-bento{grid-template-columns:1fr}.nv-bento > *,.nv-bento > .b-wide,.nv-bento > .b-hero{grid-column:span 1}}
+.nv-tile{position:relative;background:#fff;border:1px solid #E3EDF6;border-radius:20px;padding:2rem;height:100%;overflow:hidden;transition:transform .3s cubic-bezier(.4,0,.2,1),box-shadow .3s,border-color .3s}
+.nv-tile::before{content:"";position:absolute;inset:0;border-radius:20px;padding:1px;background:linear-gradient(140deg,rgba(79,163,222,.85),rgba(134,205,234,.15) 45%,transparent 70%);-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;opacity:0;transition:opacity .3s}
+.nv-tile:hover{transform:translateY(-6px);box-shadow:0 32px 60px -28px rgba(18,60,99,.45);border-color:transparent}
+.nv-tile:hover::before{opacity:1}
+.nv-tile h3{font-size:1.16rem;margin:.9rem 0 .45rem;letter-spacing:-.02em}
+.nv-tile p{color:#5C7A94;margin:0;font-size:.97rem;line-height:1.6}
+.nv-tile.b-hero{background:linear-gradient(135deg,#0C2C4A,#154C7C 55%,#2B7FC4);border-color:transparent}
+.nv-tile.b-hero::after{content:"";position:absolute;right:-60px;top:-60px;width:280px;height:280px;border-radius:50%;background:radial-gradient(circle,rgba(134,205,234,.35),transparent 70%)}
+.nv-tile.b-hero h3{color:#fff;font-size:1.5rem}
+.nv-tile.b-hero p{color:rgba(255,255,255,.75);max-width:60ch}
+.nv-tile.b-hero .nv-icon{background:rgba(255,255,255,.14);color:#BFE4F7}
+
+/* Alternating feature row visual */
+.nv-visual{position:relative;border-radius:22px;padding:1.6rem;background:linear-gradient(150deg,#EAF4FB,#F8FCFE);border:1px solid #DEE9F3;box-shadow:0 26px 60px -30px rgba(18,60,99,.5)}
+.nv-vrow{display:flex;align-items:center;gap:.85rem;background:#fff;border:1px solid #E6F0F8;border-radius:14px;padding:.9rem 1rem;margin-bottom:.7rem;box-shadow:0 4px 14px rgba(18,60,99,.06)}
+.nv-vrow:last-child{margin-bottom:0}
+.nv-vrow .ic{flex:none;width:38px;height:38px;border-radius:11px;background:linear-gradient(135deg,rgba(43,127,196,.14),rgba(134,205,234,.20));color:#2B7FC4;display:inline-flex;align-items:center;justify-content:center}
+.nv-vrow .ic svg{width:19px;height:19px}
+.nv-vrow b{display:block;font-size:.94rem;color:#123C63}
+.nv-vrow small{font-size:.8rem;color:#6C8AA5}
+.nv-vtag{margin-left:auto;font-size:.72rem;font-weight:700;color:#177245;background:#E8F7EE;border:1px solid #BFE8CE;padding:.25rem .6rem;border-radius:999px}
+
+/* Timeline steps */
+.nv-track{position:relative}
+.nv-track::before{content:"";position:absolute;top:23px;left:8%;right:8%;height:2px;background:linear-gradient(90deg,transparent,#4FA3DE 15%,#86CDEA 50%,#4FA3DE 85%,transparent)}
+@media(max-width:781px){.nv-track::before{display:none}}
+.nv-tstep{position:relative;text-align:center;padding:0 .6rem}
+.nv-tnum{position:relative;z-index:2;width:46px;height:46px;margin:0 auto .9rem;border-radius:50%;background:linear-gradient(135deg,#2B7FC4,#4FA3DE);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;box-shadow:0 0 0 8px #fff,0 10px 24px rgba(43,127,196,.35)}
+.nv-tstep h3{font-size:1.1rem;margin:0 0 .4rem}
+.nv-tstep p{color:#5C7A94;margin:0;font-size:.96rem;line-height:1.6}
+
+/* Eyebrow with rules */
+.nv-eyeline{display:flex;align-items:center;justify-content:center;gap:.7rem;font-size:.78rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#2B7FC4;margin:0 0 .6rem}
+.nv-eyeline::before,.nv-eyeline::after{content:"";width:26px;height:1px;background:linear-gradient(90deg,transparent,#8FC4E8)}
+
+/* Integration tiles (replaces plain pills) */
+.nv-igrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1rem;max-width:1000px;margin:0 auto}
+.nv-itile{display:flex;align-items:center;gap:.75rem;background:#fff;border:1px solid #E3EDF6;border-radius:14px;padding:.95rem 1.1rem;transition:transform .25s,box-shadow .25s,border-color .25s}
+.nv-itile:hover{transform:translateY(-3px);box-shadow:0 18px 34px -18px rgba(18,60,99,.4);border-color:#BFDCF2}
+.nv-mono{flex:none;width:34px;height:34px;border-radius:9px;display:inline-flex;align-items:center;justify-content:center;font-weight:800;font-size:.9rem;color:#fff;letter-spacing:-.02em}
+.nv-itile span.lbl{font-weight:600;font-size:.95rem;color:#123C63;line-height:1.2}
+.nv-itile.more{border-style:dashed;justify-content:center;color:#2B7FC4;font-weight:700}
+
+@media(prefers-reduced-motion:reduce){.nv-tile:hover,.nv-itile:hover{transform:none}}
+
+/* ==========================================================================
+   QA pass — WCAG AA contrast + polish (3.1.x)
+   Accessible on-light blue #1C6DB0 (5.6:1) replaces #2B7FC4 for small text.
+   Brand #2B7FC4 stays for fills, icons and large display type.
+   ========================================================================== */
+.nv-kicker,.nv-eyebrow2,.nv-eyeline{color:#1C6DB0}
+p.nv-logo{color:#5C7893}
+p.nv-msl,.nv-msl,.nv-mocktitle,p.nv-mocktitle,.nv-crumb,.nv-vrow small{color:#55708A}
+.nv-crumb a{color:#1C6DB0}
+.nv-chip.ico-bolt{color:#8A6508}
+.nv-chip.ico-cloud{color:#1C6DB0}
+.nv-tile p,.nv-tstep p,.nv-step p{color:#55708A}
+.nv-live{color:#12633B}
+:where(.wp-site-blocks main) a:where(:not(.wp-block-button__link)){color:#1C6DB0}
+.wp-block-button.is-style-fill .wp-block-button__link{background:linear-gradient(135deg,#1C6DB0 0%,#2B7FC4 100%)}
+.wp-block-navigation .wp-block-navigation-item__content{color:#0F3557}
+
+/* footer-link-guard: keep footer links light on the dark footer */
+.wp-site-blocks > footer a,.wp-site-blocks > footer p a{color:rgba(255,255,255,.78)}
+.wp-site-blocks > footer a:hover{color:#fff}
+
+/* Keyboard focus visibility */
+:where(.wp-site-blocks) a:focus-visible,.wp-block-button__link:focus-visible,summary:focus-visible,.wp-block-navigation-item__content:focus-visible{outline:3px solid #1C6DB0;outline-offset:3px;border-radius:6px}
+
+/* Rhythm + measure */
+.wp-block-post-content > section{padding-left:1.25rem;padding-right:1.25rem}
+h2.wp-block-heading{max-width:22ch;margin-left:auto;margin-right:auto}
+.wp-block-column h2.wp-block-heading,.nv-dhero h1{max-width:none}
+
+/* Card + FAQ polish */
+.nv-card,.nv-tcard{border-color:#E3EDF6}
+.nv-tcard{transition:transform .25s,box-shadow .25s,border-color .25s}
+.nv-tcard:hover{transform:translateY(-4px);box-shadow:0 26px 50px -26px rgba(18,60,99,.4);border-color:#BFDCF2}
+.nv-quote-featured{border-left-width:5px}
+.wp-block-details{transition:border-color .2s,box-shadow .2s}
+.wp-block-details:hover{border-color:#BFDCF2!important;box-shadow:0 10px 26px -16px rgba(18,60,99,.35)}
+.wp-block-details[open]{border-color:#8FC4E8!important;box-shadow:0 14px 34px -20px rgba(18,60,99,.4)}
+.wp-block-details summary{list-style:none}
+.wp-block-details summary::-webkit-details-marker{display:none}
+.wp-block-details summary::before{content:"";display:inline-block;width:18px;height:18px;margin-right:.7rem;vertical-align:-3px;background:#1C6DB0;-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 5v14M5 12h14' stroke='black' stroke-width='2.4' stroke-linecap='round'/%3E%3C/svg%3E") center/contain no-repeat;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 5v14M5 12h14' stroke='black' stroke-width='2.4' stroke-linecap='round'/%3E%3C/svg%3E") center/contain no-repeat;transition:transform .25s}
+.wp-block-details[open] summary::before{transform:rotate(135deg)}
+
+@media(prefers-reduced-motion:reduce){.nv-tcard:hover{transform:none}.wp-block-details summary::before{transition:none}}
+
+/* ==========================================================================
+   Spacing rhythm fix (3.2.0)
+   Earlier margin:0 resets removed all internal spacing inside the dark
+   security cards. Restore an explicit vertical rhythm.
+   ========================================================================== */
+.nv-sec-card2{padding:1.85rem 1.75rem}
+.nv-sec-card2 .nv-sec-icon{margin:0 0 1.05rem}
+.nv-sec-card2 h3{margin:0 0 .55rem;font-size:1.06rem;line-height:1.35}
+.nv-sec-card2 p{margin:0;font-size:.94rem;line-height:1.62}
+.nv-card .nv-icon{margin-bottom:1rem}
+.nv-tile .nv-icon{margin-bottom:.2rem}
+.nv-tile h3{margin:1rem 0 .5rem}
+
+/* 3.2.1 — inline block padding wins over classes, so these need !important.
+   Normalises the vertical rhythm of every full-width band on the site. */
+.wp-block-post-content > section{padding-top:5.25rem!important;padding-bottom:5.25rem!important}
+.wp-block-post-content > section:first-child{padding-top:2rem!important;padding-bottom:1rem!important}
+section:has(.nv-dhero),section.nv-dhero{padding-top:5.5rem!important;padding-bottom:5.5rem!important}
+section:has(.nv-logo){padding-top:2.5rem!important;padding-bottom:3.5rem!important}
+section:has(.nv-sec-card2) > .wp-block-group,
+section:has(.nv-bento) > .wp-block-group,
+section:has(.nv-card) > .wp-block-group,
+section:has(.nv-tcard) > .wp-block-group,
+section:has(.wp-block-details) > .wp-block-group{margin-bottom:3rem!important}
+section:has(.nv-sec-card2) .wp-block-columns{gap:1.6rem}
+@media(max-width:781px){
+ .wp-block-post-content > section{padding-top:3.5rem!important;padding-bottom:3.5rem!important}
+ section:has(.nv-sec-card2) > .wp-block-group,section:has(.nv-card) > .wp-block-group{margin-bottom:2rem!important}
+}
+
+/* ==========================================================================
+   Product UI panel (3.3.0) — realistic app mock for the "Why NovaVolt" band
+   ========================================================================== */
+.nv-app{position:relative;border-radius:26px;padding:1.35rem;overflow:hidden;background:linear-gradient(145deg,#0A2440 0%,#14497A 48%,#2B7FC4 100%);box-shadow:0 44px 90px -42px rgba(6,26,48,.85)}
+.nv-app::before{content:"";position:absolute;width:320px;height:320px;right:-90px;top:-110px;border-radius:50%;background:radial-gradient(circle,rgba(134,205,234,.42),transparent 68%);pointer-events:none}
+.nv-app::after{content:"";position:absolute;inset:0;pointer-events:none;background-image:linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px);background-size:34px 34px;-webkit-mask-image:radial-gradient(circle at 30% 80%,#000,transparent 75%);mask-image:radial-gradient(circle at 30% 80%,#000,transparent 75%)}
+.nv-appwin{position:relative;z-index:2;background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 26px 54px -22px rgba(4,22,42,.6)}
+.nv-appbar{display:flex;align-items:center;gap:6px;padding:.7rem .95rem;background:#F7FAFD;border-bottom:1px solid #EDF3F9}
+.nv-appbar i{width:9px;height:9px;border-radius:50%;display:inline-block}
+.nv-appttl{margin-left:.45rem;font-size:.73rem;font-weight:700;color:#55708A}
+.nv-applive{margin-left:auto;display:inline-flex;align-items:center;gap:.35rem;font-size:.67rem;font-weight:700;color:#12633B;background:#E8F7EE;border:1px solid #BFE8CE;padding:.22rem .55rem;border-radius:999px}
+.nv-applive::before{content:"";width:6px;height:6px;border-radius:50%;background:#28C840;animation:nvpulse 1.6s infinite}
+.nv-appbody{padding:.95rem}
+.nv-callrow{display:flex;align-items:center;gap:.7rem;border:1px solid #EDF3F9;border-radius:12px;padding:.7rem .8rem;background:#fff}
+.nv-callrow .av{width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,#1C6DB0,#86CDEA);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.72rem;flex:none}
+.nv-callrow b{display:block;font-size:.86rem;color:#123C63;line-height:1.25}
+.nv-callrow small{font-size:.72rem;color:#55708A}
+.nv-wave{display:flex;align-items:flex-end;gap:3px;height:24px;margin-left:auto}
+.nv-wave i{width:3px;border-radius:2px;background:linear-gradient(180deg,#4FA3DE,#1C6DB0);animation:nvwave 1.05s ease-in-out infinite}
+@keyframes nvwave{0%,100%{height:28%}50%{height:100%}}
+.nv-stats2{display:grid;grid-template-columns:1fr 1fr;gap:.7rem;margin-top:.7rem}
+.nv-st{border:1px solid #EDF3F9;border-radius:12px;padding:.85rem .9rem;background:#FCFDFF}
+.nv-st b{display:block;font-size:1.62rem;line-height:1;letter-spacing:-.035em;background:linear-gradient(120deg,#1C6DB0,#4FA3DE);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.nv-st span{display:block;font-size:.71rem;color:#55708A;margin-top:.3rem}
+.nv-spark{display:flex;align-items:flex-end;gap:2px;height:20px;margin-top:.55rem}
+.nv-spark i{flex:1;border-radius:2px;background:#DCEAF6}
+.nv-spark i.on{background:linear-gradient(180deg,#4FA3DE,#1C6DB0)}
+.nv-appfoot{display:flex;align-items:center;gap:.6rem;margin-top:.7rem;padding:.75rem .85rem;border:1px solid #EDF3F9;border-radius:12px;background:#F7FAFD}
+.nv-appfoot .ic{width:30px;height:30px;border-radius:9px;background:rgba(28,109,176,.12);color:#1C6DB0;display:flex;align-items:center;justify-content:center;flex:none}
+.nv-appfoot b{display:block;font-size:.82rem;color:#123C63}
+.nv-appfoot small{font-size:.72rem;color:#55708A}
+.nv-appfoot .go{margin-left:auto;font-size:.72rem;font-weight:700;color:#1C6DB0}
+@media(prefers-reduced-motion:reduce){.nv-wave i,.nv-applive::before{animation:none}.nv-wave i{height:60%}}
+@media(max-width:781px){.nv-app{padding:1rem;border-radius:20px}}
+
+/* ==========================================================================
+   Integrations constellation (3.4.0)
+   NovaVolt sits at the centre; connected tools orbit around it.
+   Brand marks are neutral monograms until the client confirms which
+   integrations are real and supplies/approves official logo assets.
+   ========================================================================== */
+.nv-orb{position:relative;width:min(620px,100%);aspect-ratio:1/.86;margin:0 auto}
+.nv-orb .ring{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);border-radius:50%;border:1px dashed rgba(28,109,176,.24)}
+.nv-orb .ring.r1{width:46%;height:52%}
+.nv-orb .ring.r2{width:78%;height:88%;border-color:rgba(28,109,176,.16)}
+.nv-orb .hub{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:132px;height:132px;border-radius:32px;background:linear-gradient(150deg,#0C2C4A,#1C6DB0 60%,#2B7FC4);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.25rem;box-shadow:0 26px 54px -20px rgba(12,44,74,.7);z-index:3;color:#fff;text-align:center;padding:.6rem}
+.nv-orb .hub b{font-size:.95rem;letter-spacing:-.02em;line-height:1.15}
+.nv-orb .hub span{font-size:.63rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.7)}
+.nv-orb .hub::after{content:"";position:absolute;inset:-14px;border-radius:40px;border:1px solid rgba(28,109,176,.25);animation:nvhalo 3.4s ease-in-out infinite}
+@keyframes nvhalo{0%,100%{opacity:.55;transform:scale(1)}50%{opacity:.15;transform:scale(1.06)}}
+.nv-orb .node{position:absolute;left:50%;top:50%;display:flex;align-items:center;gap:.6rem;padding:.6rem .9rem .6rem .6rem;background:#fff;border:1px solid #E3EDF6;border-radius:14px;box-shadow:0 12px 26px -14px rgba(18,60,99,.4);white-space:nowrap;transform:translate(-50%,-50%);transition:transform .28s cubic-bezier(.4,0,.2,1),box-shadow .28s,border-color .28s;z-index:2}
+.nv-orb .node:hover{box-shadow:0 22px 40px -16px rgba(18,60,99,.5);border-color:#BFDCF2;transform:translate(-50%,-50%) scale(1.06)}
+.nv-orb .node .m{width:30px;height:30px;border-radius:9px;display:inline-flex;align-items:center;justify-content:center;color:#fff;font-weight:800;font-size:.82rem;flex:none}
+.nv-orb .node .n{font-size:.86rem;font-weight:600;color:#123C63}
+.nv-orb .more{position:absolute;left:50%;bottom:0;transform:translateX(-50%);font-size:.8rem;font-weight:700;color:#1C6DB0;background:#fff;border:1px dashed #BFDCF2;border-radius:999px;padding:.45rem 1.1rem;z-index:2}
+@media(max-width:900px){
+ .nv-orb{aspect-ratio:auto;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.7rem;max-width:460px}
+ .nv-orb .ring,.nv-orb .hub::after{display:none}
+ .nv-orb .hub{position:static;transform:none;width:auto;height:auto;grid-column:1/-1;flex-direction:row;gap:.6rem;border-radius:16px;padding:.9rem}
+ .nv-orb .node{position:static;transform:none;white-space:normal}
+ .nv-orb .node:hover{transform:none}
+ .nv-orb .more{position:static;transform:none;grid-column:1/-1;text-align:center}
+}
+@media(prefers-reduced-motion:reduce){.nv-orb .hub::after{animation:none}.nv-orb .node:hover{transform:translate(-50%,-50%)}}
+
+/* 3.4.1/3.4.3 — clear the "+ more" pill from the bottom orbit node.
+   WP block margin resets zero a plain margin here, hence !important. */
+.nv-orb,.wp-block-html:has(.nv-orb){margin-bottom:6rem!important}
+.nv-orb .more{bottom:-4.1rem}
+@media(max-width:900px){.nv-orb,.wp-block-html:has(.nv-orb){margin-bottom:0!important}.nv-orb .more{bottom:auto}}
+
+/* ==========================================================================
+   CTA band (3.5.0) — depth + readable buttons
+   The global gradient-fill button rule was overriding the CTA's white
+   primary button, leaving dark text on blue. Scoped overrides fix that.
+   ========================================================================== */
+.nv-cta{position:relative;overflow:hidden;border-radius:30px;background:linear-gradient(125deg,#0B2B4C 0%,#14548C 45%,#2B7FC4 100%);box-shadow:0 44px 90px -46px rgba(9,38,68,.9)}
+.nv-cta::before{content:"";position:absolute;width:520px;height:520px;right:-140px;top:-220px;border-radius:50%;background:radial-gradient(circle,rgba(134,205,234,.38),transparent 66%);pointer-events:none}
+.nv-cta::after{content:"";position:absolute;inset:0;pointer-events:none;background-image:linear-gradient(rgba(255,255,255,.055) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.055) 1px,transparent 1px);background-size:46px 46px;-webkit-mask-image:radial-gradient(circle at 20% 90%,#000,transparent 72%);mask-image:radial-gradient(circle at 20% 90%,#000,transparent 72%)}
+.nv-cta > *{position:relative;z-index:2}
+.nv-cta h2{color:#fff!important;letter-spacing:-.03em}
+.nv-cta p{color:rgba(255,255,255,.86)!important}
+.nv-cta .wp-block-button.is-style-fill .wp-block-button__link{background:#fff!important;background-image:none!important;color:#0B2B4C!important;box-shadow:0 16px 34px -14px rgba(0,0,0,.55)}
+.nv-cta .wp-block-button.is-style-fill .wp-block-button__link:hover{background:#EAF4FB!important;transform:translateY(-2px);box-shadow:0 22px 44px -16px rgba(0,0,0,.6)}
+.nv-cta .wp-block-button.is-style-outline .wp-block-button__link{border-color:rgba(255,255,255,.55)!important;color:#fff!important;background:transparent!important}
+.nv-cta .wp-block-button.is-style-outline .wp-block-button__link:hover{background:#fff!important;color:#0B2B4C!important;border-color:#fff!important}
+.nv-cta .wp-block-buttons{gap:.9rem}
+@media(max-width:781px){.nv-cta{border-radius:22px}}
+
+/* 3.5.1 — bento overlap fix.
+   height:100% on a grid item creates a circular sizing dependency: the row is
+   sized from content, then the item resolves 100% against it and can end up
+   taller, overflowing into the row below. Grid items stretch by default. */
+.nv-bento > .nv-tile{height:auto!important;align-self:stretch;min-height:0}
+.nv-bento{align-items:stretch;grid-auto-rows:minmax(0,auto)}
+.nv-tile{display:flex;flex-direction:column}
+.nv-tile p{margin-top:0}
+
+/* ==========================================================================
+   Navigation (3.6.0) — refined bar + Services dropdown
+   ========================================================================== */
+.wp-site-blocks > header.wp-block-template-part{transition:box-shadow .3s,background .3s,border-color .3s}
+.wp-site-blocks > header.wp-block-template-part.nv-stuck{box-shadow:0 10px 30px -18px rgba(12,44,74,.45);background:rgba(255,255,255,.92)}
+.wp-block-navigation{align-items:center}
+.wp-block-navigation .wp-block-navigation-item__content{position:relative;font-weight:500;padding:.45rem 0;transition:color .2s}
+/* animated underline on top-level items */
+.wp-block-navigation > ul > li > .wp-block-navigation-item__content::after,
+.wp-block-navigation > ul > li > .wp-block-navigation-submenu > .wp-block-navigation-item__content::after{content:"";position:absolute;left:0;right:0;bottom:0;height:2px;border-radius:2px;background:linear-gradient(90deg,#1C6DB0,#86CDEA);transform:scaleX(0);transform-origin:left;transition:transform .28s cubic-bezier(.4,0,.2,1)}
+.wp-block-navigation > ul > li:hover > .wp-block-navigation-item__content::after,
+.wp-block-navigation > ul > li:focus-within > .wp-block-navigation-item__content::after,
+.wp-block-navigation > ul > li.current-menu-item > .wp-block-navigation-item__content::after{transform:scaleX(1)}
+.wp-block-navigation .current-menu-item > .wp-block-navigation-item__content{color:#1C6DB0!important;font-weight:600}
+/* submenu panel */
+.wp-block-navigation .wp-block-navigation__submenu-container{min-width:290px;padding:.5rem;border:1px solid #E3EDF6!important;border-radius:16px!important;background:#fff!important;box-shadow:0 30px 60px -28px rgba(12,44,74,.55)!important;margin-top:.55rem}
+.wp-block-navigation .wp-block-navigation__submenu-container::before{content:"";position:absolute;top:-7px;left:26px;width:12px;height:12px;background:#fff;border-left:1px solid #E3EDF6;border-top:1px solid #E3EDF6;transform:rotate(45deg);border-radius:2px}
+.wp-block-navigation .wp-block-navigation__submenu-container li{width:100%}
+.wp-block-navigation .wp-block-navigation__submenu-container .wp-block-navigation-item__content{display:block;width:100%;padding:.6rem .8rem!important;border-radius:10px;font-size:.93rem;color:#123C63!important;transition:background .18s,color .18s,transform .18s}
+.wp-block-navigation .wp-block-navigation__submenu-container .wp-block-navigation-item__content::after{display:none}
+.wp-block-navigation .wp-block-navigation__submenu-container .wp-block-navigation-item__content:hover{background:#F1F7FC;color:#1C6DB0!important;transform:translateX(3px)}
+.wp-block-navigation .wp-block-navigation__submenu-container .nv-viewall{border-top:1px solid #EDF3F9;margin-top:.35rem;padding-top:.35rem}
+.wp-block-navigation .wp-block-navigation__submenu-container .nv-viewall .wp-block-navigation-item__content{font-weight:700;color:#1C6DB0!important}
+.wp-block-navigation .wp-block-navigation__submenu-icon{margin-left:.3rem;transition:transform .25s}
+.wp-block-navigation li:hover > .wp-block-navigation-item__content .wp-block-navigation__submenu-icon{transform:rotate(180deg)}
+@media(max-width:781px){
+ .wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__submenu-container{background:transparent!important;border:0!important;box-shadow:none!important;padding-left:.75rem}
+ .wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__submenu-container::before{display:none}
+ .wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation-item__content{color:#fff!important}
+}
+@media(prefers-reduced-motion:reduce){.wp-block-navigation .wp-block-navigation-item__content::after{transition:none}}
+
+/* ==========================================================================
+   3.6.1 — MOBILE MENU FIX (reported by client)
+   backdrop-filter on the sticky header establishes a containing block, so the
+   navigation overlay (position:fixed; inset:0) was being clipped to the 70px
+   header instead of filling the viewport — only the first link was visible.
+   Neutralise the filter while the modal is open. WP adds .has-modal-open to
+   <html>; the :has() rule is a belt-and-braces fallback.
+   ========================================================================== */
+html.has-modal-open .wp-site-blocks > header.wp-block-template-part,
+.wp-site-blocks > header.wp-block-template-part:has(.wp-block-navigation__responsive-container.is-menu-open){
+ backdrop-filter:none!important;-webkit-backdrop-filter:none!important;
+ background:transparent!important;box-shadow:none!important;border-bottom-color:transparent!important;
+}
+.wp-block-navigation__responsive-container.is-menu-open{position:fixed!important;inset:0!important;height:100dvh!important;max-height:100dvh;overflow-y:auto;z-index:9999;padding:1.25rem}
+.wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__responsive-container-content{width:100%;align-items:flex-start;gap:.35rem;padding-top:3rem}
+.wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation-item__content{font-size:1.06rem;padding:.6rem 0!important}
+.wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__submenu-container .wp-block-navigation-item__content{font-size:.95rem;opacity:.85}
+.wp-block-navigation__responsive-container-close{z-index:10000}
+
+/* 3.6.2 — mobile overlay polish: left-align everything, readable "View all" */
+.wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__container,
+.wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__submenu-container{align-items:flex-start!important;justify-content:flex-start!important;text-align:left!important}
+.wp-block-navigation__responsive-container.is-menu-open li{width:100%;text-align:left}
+.wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation-item__content{justify-content:flex-start!important;text-align:left!important}
+.wp-block-navigation__responsive-container.is-menu-open .nv-viewall .wp-block-navigation-item__content{color:#86CDEA!important}
+.wp-block-navigation__responsive-container.is-menu-open .nv-viewall{border-top-color:rgba(255,255,255,.18)!important}
+
+/* 3.6.3 — the nav block carries .items-justified-right for the desktop bar;
+   that must not apply inside the mobile overlay. */
+.wp-block-navigation__responsive-container.is-menu-open .items-justified-right,
+.wp-block-navigation__responsive-container.is-menu-open .items-justified-center,
+.wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__container{justify-content:flex-start!important;align-items:flex-start!important}
+.wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__responsive-container-content{justify-content:flex-start!important;align-items:flex-start!important}
+
+/* 3.6.4 — each overlay <li> is a column flex with align-items:flex-end,
+   which is what actually right-aligned the mobile links. */
+.wp-block-navigation__responsive-container.is-menu-open li,
+.wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation-item,
+.wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation-submenu{align-items:flex-start!important}
+
+/* ==========================================================================
+   Mobile navigation overlay (3.7.0) — full redesign
+   ========================================================================== */
+.nv-navcta{display:none}
+@media(max-width:781px){
+.wp-block-navigation__responsive-container.is-menu-open{
+ background:linear-gradient(165deg,#071A2E 0%,#0C2C4A 52%,#12406B 100%)!important;
+ padding:0!important;overflow-y:auto}
+.wp-block-navigation__responsive-container.is-menu-open::before{
+ content:"";position:fixed;top:-120px;right:-120px;width:340px;height:340px;border-radius:50%;
+ background:radial-gradient(circle,rgba(79,163,222,.32),transparent 68%);pointer-events:none}
+.wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__responsive-container-content{
+ position:relative;z-index:2;padding:5.5rem 1.5rem 2.5rem!important;gap:0!important;width:100%}
+.wp-block-navigation__responsive-container-close{
+ top:1.35rem!important;right:1.35rem!important;width:42px;height:42px;border-radius:50%;
+ background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);color:#fff!important;
+ display:flex;align-items:center;justify-content:center;transition:background .2s}
+.wp-block-navigation__responsive-container-close:hover{background:rgba(255,255,255,.16)}
+.wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__container > li{
+ width:100%;border-bottom:1px solid rgba(255,255,255,.09);padding:.1rem 0}
+.wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__container > li:last-child{border-bottom:0}
+.wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__container > li > .wp-block-navigation-item__content,
+.wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__container > li > .wp-block-navigation-submenu > .wp-block-navigation-item__content{
+ font-size:1.14rem!important;font-weight:600;letter-spacing:-.01em;padding:.95rem .55rem!important;
+ border-radius:12px;width:100%;color:#fff!important;transition:background .18s,padding-left .18s}
+.wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__container > li > .wp-block-navigation-item__content:hover{
+ background:rgba(255,255,255,.09)!important;padding-left:.9rem!important;transform:none!important}
+.wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation-item__content::after{display:none!important}
+.wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__submenu-container{
+ background:rgba(255,255,255,.055)!important;border:1px solid rgba(255,255,255,.10)!important;
+ border-radius:16px!important;padding:.45rem!important;margin:.15rem 0 .9rem!important;
+ box-shadow:none!important;border-left-width:1px!important}
+.wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__submenu-container .wp-block-navigation-item__content{
+ font-size:.96rem!important;font-weight:500;color:rgba(255,255,255,.82)!important;
+ padding:.62rem .75rem!important;border-radius:10px;opacity:1}
+.wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__submenu-container .wp-block-navigation-item__content:hover{
+ background:rgba(255,255,255,.12)!important;color:#fff!important;transform:none!important}
+.wp-block-navigation__responsive-container.is-menu-open .nv-viewall{border-top:1px solid rgba(255,255,255,.12)!important;margin-top:.4rem!important;padding-top:.5rem!important}
+.wp-block-navigation__responsive-container.is-menu-open .nv-viewall .wp-block-navigation-item__content{
+ color:#8FD3F0!important;font-weight:700!important;font-size:.92rem!important}
+.nv-navcta{display:block!important;border-bottom:0!important;margin-top:1.4rem}
+.wp-block-navigation__responsive-container.is-menu-open .nv-navcta .wp-block-navigation-item__content{
+ display:flex!important;align-items:center;justify-content:center!important;text-align:center;
+ background:linear-gradient(135deg,#1C6DB0,#4FA3DE);color:#fff!important;font-weight:700!important;
+ border-radius:999px;padding:.95rem 1.4rem!important;box-shadow:0 14px 30px -12px rgba(28,109,176,.7)}
+.wp-block-navigation__responsive-container.is-menu-open .nv-navcta .wp-block-navigation-item__content:hover{
+ background:linear-gradient(135deg,#2B7FC4,#5FB0E8)!important;padding-left:1.4rem!important}
+.wp-block-navigation__responsive-container.is-menu-open a:focus-visible{outline:2px solid #86CDEA!important;outline-offset:2px;border-radius:10px}
+}
+
+/* 3.7.1 — mobile overlay spacing corrections
+   Links had width:100% with content-box sizing, so padding pushed them
+   ~16px past the submenu card edge (hover highlight bled outside). */
+@media(max-width:781px){
+.wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation-item__content{box-sizing:border-box!important;max-width:100%}
+.wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__submenu-container{padding:.55rem!important;overflow:hidden}
+.wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__submenu-container li{width:100%}
+.wp-block-navigation__responsive-container.is-menu-open a:focus-visible{outline:2px solid #86CDEA!important;outline-offset:-2px!important;border-radius:12px}
+.wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__container > li > .wp-block-navigation-item__content,
+.wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__container > li > .wp-block-navigation-submenu > .wp-block-navigation-item__content{padding:1rem .6rem!important}
+.wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__submenu-container{margin:.1rem 0 1.1rem!important}
+.wp-block-navigation__responsive-container.is-menu-open .nv-navcta{margin-top:1.6rem!important;padding-top:0!important}
+}

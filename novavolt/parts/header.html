@@ -6,12 +6,21 @@
 
 		<!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"center"}} -->
 		<div class="wp-block-group">
-			<!-- wp:navigation {"overlayMenu":"mobile","overlayBackgroundColor":"navy-deep","overlayTextColor":"base","layout":{"type":"flex","justifyContent":"right","flexWrap":"wrap"},"style":{"spacing":{"blockGap":"1.75rem"}},"fontSize":"medium"} -->
+			<!-- wp:navigation {"overlayMenu":"mobile","openSubmenusOnClick":false,"showSubmenuIcon":true,"overlayBackgroundColor":"navy-deep","overlayTextColor":"base","layout":{"type":"flex","justifyContent":"right","flexWrap":"wrap"},"style":{"spacing":{"blockGap":"1.6rem"}},"fontSize":"medium"} -->
 				<!-- wp:navigation-link {"label":"About","url":"/about-us/","kind":"custom","isTopLevelLink":true} /-->
-				<!-- wp:navigation-link {"label":"Services","url":"/services/","kind":"custom","isTopLevelLink":true} /-->
+				<!-- wp:navigation-submenu {"label":"Services","url":"/services/","kind":"custom","isTopLevelItem":true} -->
+					<!-- wp:navigation-link {"label":"Business Phone Systems","url":"/services/business-phone-systems/","kind":"custom"} /-->
+					<!-- wp:navigation-link {"label":"VoIP &amp; Unified Communications","url":"/services/voip-unified-communications/","kind":"custom"} /-->
+					<!-- wp:navigation-link {"label":"AI Receptionist &amp; Automation","url":"/services/ai-receptionist-automation/","kind":"custom"} /-->
+					<!-- wp:navigation-link {"label":"Customer Engagement &amp; Sales","url":"/services/customer-engagement-sales/","kind":"custom"} /-->
+					<!-- wp:navigation-link {"label":"Business Messaging &amp; Collaboration","url":"/services/business-messaging-collaboration/","kind":"custom"} /-->
+					<!-- wp:navigation-link {"label":"Security &amp; Reliability","url":"/services/security-reliability/","kind":"custom"} /-->
+					<!-- wp:navigation-link {"label":"View all services","url":"/services/","kind":"custom","className":"nv-viewall"} /-->
+				<!-- /wp:navigation-submenu -->
 				<!-- wp:navigation-link {"label":"Portfolio","url":"/portfolio/","kind":"custom","isTopLevelLink":true} /-->
 				<!-- wp:navigation-link {"label":"Blog","url":"/blog/","kind":"custom","isTopLevelLink":true} /-->
 				<!-- wp:navigation-link {"label":"FAQ","url":"/faq/","kind":"custom","isTopLevelLink":true} /-->
+				<!-- wp:navigation-link {"label":"Talk to Sales","url":"/contact/","kind":"custom","className":"nv-navcta"} /-->
 			<!-- /wp:navigation -->
 
 			<!-- wp:buttons {"style":{"spacing":{"margin":{"left":"1.5rem"}}}} -->
