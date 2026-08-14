@@ -7,7 +7,7 @@ Description: Custom enterprise block theme for NovaVolt Systems — modern busin
 Requires at least: 6.4
 Tested up to: 6.6
 Requires PHP: 7.4
-Version: 3.7.1
+Version: 3.8.1
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: novavolt
@@ -771,3 +771,18 @@ html.has-modal-open .wp-site-blocks > header.wp-block-template-part,
 .wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__submenu-container{margin:.1rem 0 1.1rem!important}
 .wp-block-navigation__responsive-container.is-menu-open .nv-navcta{margin-top:1.6rem!important;padding-top:0!important}
 }
+
+/* 3.8.0 — CLS + font stack. The marquee is assembled by JS after load, so its
+   height is reserved up front; the metric-matched fallback prevents reflow. */
+body{font-family:'Inter','Inter Fallback',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif}
+.nv-marquee,.nv-mscroll{min-height:34px}
+p.nv-logo{line-height:34px}
+@media(max-width:781px){.nv-marquee,.nv-mscroll{min-height:30px}p.nv-logo{line-height:30px}}
+
+/* 3.8.1 — CLS root cause: the trust-bar logos wrap onto ~4 lines before
+   reveal.js collapses them into a single scrolling marquee (measured 264px ->
+   30px on a 390px screen = a 234px late shift). Lock the row to one line from
+   first paint so the height never changes. */
+.wp-block-group:has(> p.nv-logo){flex-wrap:nowrap!important;overflow:hidden;min-height:34px;contain:layout}
+@media(max-width:781px){.wp-block-group:has(> p.nv-logo){min-height:30px}}
+.nv-marquee,.nv-mscroll{contain:layout}
