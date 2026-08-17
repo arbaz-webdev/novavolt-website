@@ -7,7 +7,7 @@ Description: Custom enterprise block theme for NovaVolt Systems — modern busin
 Requires at least: 6.4
 Tested up to: 6.6
 Requires PHP: 7.4
-Version: 4.0.0
+Version: 4.0.1
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: novavolt
@@ -769,3 +769,21 @@ p.nv-logo{line-height:34px}
 #nv-chatbot > *{z-index:9000!important}
 html.has-modal-open #nv-chatbot{display:none!important}
 @media print{#nv-chatbot{display:none!important}}
+
+
+/* 4.0.1 — integrations row.
+   repeat(auto-fit,minmax(150px,1fr)) resolved to six 151px columns. After the
+   34px monogram, the 12px gap and 35px of tile padding, that left roughly 70px
+   for the label: "Microsoft Teams", "QuickBooks Online" and "Google Contacts"
+   wrapped to two lines and "ConnectWise" (115px) spilled past its tile edge.
+   Sizing each tile to its own content and centring the wrapped row fixes it
+   without shortening any provider name. */
+.nv-igrid{display:flex;flex-wrap:wrap;justify-content:center;align-items:stretch;gap:.9rem;max-width:920px}
+.nv-igrid > .nv-itile{flex:0 0 auto}
+.nv-itile span.lbl{white-space:nowrap}
+.nv-itile.more{white-space:nowrap;padding-left:1.4rem;padding-right:1.4rem}
+@media(max-width:520px){
+ .nv-igrid{gap:.7rem}
+ .nv-itile{padding:.85rem 1rem}
+ .nv-itile span.lbl,.nv-itile.more{font-size:.9rem}
+}
