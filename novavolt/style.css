@@ -7,7 +7,7 @@ Description: Custom enterprise block theme for NovaVolt Systems — modern busin
 Requires at least: 6.4
 Tested up to: 6.6
 Requires PHP: 7.4
-Version: 3.8.1
+Version: 3.9.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: novavolt
@@ -786,3 +786,34 @@ p.nv-logo{line-height:34px}
 .wp-block-group:has(> p.nv-logo){flex-wrap:nowrap!important;overflow:hidden;min-height:34px;contain:layout}
 @media(max-width:781px){.wp-block-group:has(> p.nv-logo){min-height:30px}}
 .nv-marquee,.nv-mscroll{contain:layout}
+
+/* ==========================================================================
+   3.9.0 — dropdown fixes
+   1. The mobile-only "Talk to Sales" nav item was showing on desktop too:
+      core's .wp-block-navigation .wp-block-navigation-item{display:flex}
+      outranked a bare .nv-navcta{display:none}. Matched specificity here.
+   2. The submenu sat below a transparent margin gap, so moving the cursor
+      toward it crossed dead space and the menu closed. The gap is now padding
+      inside the hover area, with an invisible bridge for safety.
+   3. Panel widened so service names sit on one line.
+   ========================================================================== */
+@media(min-width:782px){
+  .wp-block-navigation li.nv-navcta,
+  .wp-block-navigation .wp-block-navigation-item.nv-navcta{display:none!important}
+}
+
+/* keep hover alive across the gap */
+.wp-block-navigation .wp-block-navigation__submenu-container{
+  margin-top:0!important;
+  top:100%!important;
+  padding:.9rem .5rem .5rem!important;
+  min-width:326px!important;
+  background-clip:padding-box;
+}
+.wp-block-navigation .wp-block-navigation__submenu-container::after{
+  content:"";position:absolute;left:0;right:0;top:-14px;height:16px;background:transparent;
+}
+.wp-block-navigation .wp-block-navigation__submenu-container::before{top:3px}
+.wp-block-navigation > ul > li.has-child{padding-bottom:.2rem}
+/* one line per service */
+.wp-block-navigation .wp-block-navigation__submenu-container .wp-block-navigation-item__content{white-space:nowrap}
