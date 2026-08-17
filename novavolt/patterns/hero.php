@@ -12,7 +12,6 @@
 <div class="wp-block-group alignwide nv-hero2" style="padding-top:var(--wp--preset--spacing--50);padding-right:var(--wp--preset--spacing--50);padding-bottom:var(--wp--preset--spacing--50);padding-left:var(--wp--preset--spacing--50)">
 <!-- wp:columns {"verticalAlignment":"center","style":{"spacing":{"blockGap":{"left":"var:preset|spacing|50"}}}} -->
 <div class="wp-block-columns are-vertically-aligned-center">
-
 <!-- wp:column {"verticalAlignment":"center","width":"54%"} -->
 <div class="wp-block-column is-vertically-aligned-center" style="flex-basis:54%">
 <!-- wp:paragraph {"className":"nv-eyebrow2"} -->
@@ -21,8 +20,8 @@
 <!-- wp:heading {"level":1} -->
 <h1 class="wp-block-heading">Every call answered. Every customer engaged.</h1>
 <!-- /wp:heading -->
-<!-- wp:paragraph {"style":{"color":{"text":"#3D5A76"},"typography":{"fontSize":"1.15rem","lineHeight":"1.65"}}} -->
-<p style="color:#3D5A76;font-size:1.15rem;line-height:1.65">NovaVolt brings your phone system, VoIP, messaging, and a 24/7 AI receptionist into one clean platform — enterprise-grade communication built for small and mid-sized teams.</p>
+<!-- wp:paragraph {"style":{"color":{"text":"#3A5570"},"typography":{"fontSize":"1.15rem","lineHeight":"1.65"}}} -->
+<p style="color:#3A5570;font-size:1.15rem;line-height:1.65">NovaVolt brings your phone system, VoIP, messaging, and a 24/7 AI receptionist into one clean platform — enterprise-grade communication built for small and mid-sized teams.</p>
 <!-- /wp:paragraph -->
 <!-- wp:buttons {"style":{"spacing":{"blockGap":"0.9rem","margin":{"top":"1.4rem"}}}} -->
 <div class="wp-block-buttons" style="margin-top:1.4rem">
@@ -34,23 +33,22 @@
 <!-- /wp:button -->
 </div>
 <!-- /wp:buttons -->
-<!-- wp:paragraph {"style":{"color":{"text":"#6C8AA5"},"typography":{"fontSize":"0.88rem"},"spacing":{"margin":{"top":"1.1rem"}}}} -->
-<p style="color:#6C8AA5;font-size:0.88rem;margin-top:1.1rem">No hardware to buy · Live in days · U.S.-based support</p>
+<!-- wp:paragraph {"style":{"color":{"text":"#55708A"},"typography":{"fontSize":"0.88rem"},"spacing":{"margin":{"top":"1.1rem"}}}} -->
+<p style="color:#55708A;font-size:0.88rem;margin-top:1.1rem">No hardware to buy · Live in days · U.S.-based support</p>
 <!-- /wp:paragraph -->
 </div>
 <!-- /wp:column -->
-
 <!-- wp:column {"width":"46%"} -->
 <div class="wp-block-column" style="flex-basis:46%">
 <!-- wp:group {"className":"nv-mockwrap","layout":{"type":"constrained"}} -->
 <div class="wp-block-group nv-mockwrap">
 <!-- wp:paragraph {"className":"nv-chip nv-float nv-float-tr"} -->
-<p class="nv-chip nv-float nv-float-tr has-ico ico-bolt">99.99% uptime</p>
+<p class="nv-chip nv-float nv-float-tr has-ico ico-bolt">No setup fees</p>
 <!-- /wp:paragraph -->
 <!-- wp:group {"className":"nv-mockup","style":{"spacing":{"blockGap":"0"}},"layout":{"type":"constrained"}} -->
 <div class="wp-block-group nv-mockup">
 <!-- wp:html -->
-<div class="nv-mockbar"><span class="nv-dot" style="background:#FF5F57"></span><span class="nv-dot" style="background:#FEBC2E"></span><span class="nv-dot" style="background:#28C840"></span><span class="nv-mocktitle">NovaVolt Dashboard</span></div>
+<div class="nv-mockbar"><span class="nv-dot" style="background:#FF5F57"></span><span class="nv-dot" style="background:#FEBC2E"></span><span class="nv-dot" style="background:#28C840"></span><span class="nv-mocktitle">NovaVolt Dashboard — illustrative example</span></div>
 <!-- /wp:html -->
 <!-- wp:group {"className":"nv-mockbody","style":{"spacing":{"blockGap":"0.9rem","padding":{"top":"1.2rem","bottom":"1.2rem","left":"1.2rem","right":"1.2rem"}}},"layout":{"type":"constrained"}} -->
 <div class="wp-block-group nv-mockbody" style="padding-top:1.2rem;padding-right:1.2rem;padding-bottom:1.2rem;padding-left:1.2rem">
@@ -65,7 +63,7 @@
 <p style="font-size:0.95rem;font-weight:700">AI Receptionist</p>
 <!-- /wp:paragraph -->
 <!-- wp:paragraph {"className":"nv-live"} -->
-<p class="nv-live">● Live call — Brightside Dental</p>
+<p class="nv-live">● Live call — Example Caller</p>
 <!-- /wp:paragraph -->
 </div>
 <!-- /wp:group -->
@@ -117,7 +115,6 @@
 <!-- /wp:group -->
 </div>
 <!-- /wp:column -->
-
 </div>
 <!-- /wp:columns -->
 </div>

@@ -19,7 +19,7 @@
 		<!-- wp:buttons {"layout":{"type":"flex","justifyContent":"center"},"style":{"spacing":{"margin":{"top":"0.75rem"},"blockGap":"1rem"}}} -->
 		<div class="wp-block-buttons" style="margin-top:0.75rem">
 			<!-- wp:button {"backgroundColor":"base","textColor":"navy","className":"is-style-fill","style":{"color":{"background":"#ffffff"}}} -->
-			<div class="wp-block-button is-style-fill"><a class="wp-block-button__link has-navy-color has-text-color has-background wp-element-button" style="background-color:#ffffff">Book a demo</a></div>
+			<div class="wp-block-button is-style-fill"><a class="wp-block-button__link has-navy-color has-text-color has-background wp-element-button" style="background-color:#ffffff" href="tel:+18004303317">Call (800) 430-3317</a></div>
 			<!-- /wp:button -->
 			<!-- wp:button {"textColor":"base","className":"is-style-outline","style":{"border":{"color":"rgba(255,255,255,0.5)"}}} -->
 			<div class="wp-block-button is-style-outline"><a class="wp-block-button__link has-base-color has-text-color wp-element-button" style="border-color:rgba(255,255,255,0.5)" href="/contact/">Contact us</a></div>

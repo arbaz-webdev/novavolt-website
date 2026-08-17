@@ -36,16 +36,14 @@
   row.appendChild(scroller);
 })();
 
+
 /* 3. Sticky header shade — adds .nv-stuck once the page is scrolled */
 (function () {
   'use strict';
   var header = document.querySelector('.wp-site-blocks > header.wp-block-template-part');
   if (!header) return;
   var ticking = false;
-  function update() {
-    header.classList.toggle('nv-stuck', window.scrollY > 8);
-    ticking = false;
-  }
+  function update() { header.classList.toggle('nv-stuck', window.scrollY > 8); ticking = false; }
   window.addEventListener('scroll', function () {
     if (!ticking) { window.requestAnimationFrame(update); ticking = true; }
   }, { passive: true });

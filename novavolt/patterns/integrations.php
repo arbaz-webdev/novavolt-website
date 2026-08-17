@@ -3,7 +3,7 @@
  * Title: Integrations
  * Slug: novavolt/integrations
  * Categories: novavolt
- * Description: Integration pills built from editable buttons.
+ * Description: Confirmed integrations only. Neutral monograms rather than vendor logos - showing a provider logo needs their brand approval.
  */
 ?>
 <!-- wp:group {"tagName":"section","align":"full","backgroundColor":"surface","style":{"spacing":{"padding":{"top":"var:preset|spacing|60","bottom":"var:preset|spacing|60"}}},"layout":{"type":"constrained"}} -->
@@ -12,21 +12,18 @@
 <div class="wp-block-group" style="margin-bottom:var(--wp--preset--spacing--40)">
 <!-- wp:paragraph {"align":"center","className":"nv-kicker"} --><p class="has-text-align-center nv-kicker">Integrations</p><!-- /wp:paragraph -->
 <!-- wp:heading {"textAlign":"center","level":2} --><h2 class="wp-block-heading has-text-align-center">Works with the tools you already use</h2><!-- /wp:heading -->
-<!-- wp:paragraph {"align":"center","style":{"color":{"text":"#64748b"},"typography":{"fontSize":"1.05rem"}}} --><p class="has-text-align-center" style="color:#64748b;font-size:1.05rem">Connect NovaVolt to your CRM, helpdesk, and collaboration stack in a few clicks.</p><!-- /wp:paragraph -->
+<!-- wp:paragraph {"align":"center","style":{"color":{"text":"#55708A"},"typography":{"fontSize":"1.05rem"}}} --><p class="has-text-align-center" style="color:#55708A;font-size:1.05rem">Connect NovaVolt to the systems your team already works in.</p><!-- /wp:paragraph -->
 </div>
 <!-- /wp:group -->
-<!-- wp:buttons {"className":"nv-pillgrid","layout":{"type":"flex","justifyContent":"center"},"style":{"spacing":{"blockGap":"0.8rem"}}} -->
-<div class="wp-block-buttons nv-pillgrid">
-<!-- wp:button --><div class="wp-block-button"><a class="wp-block-button__link wp-element-button">Salesforce</a></div><!-- /wp:button -->
-<!-- wp:button --><div class="wp-block-button"><a class="wp-block-button__link wp-element-button">HubSpot</a></div><!-- /wp:button -->
-<!-- wp:button --><div class="wp-block-button"><a class="wp-block-button__link wp-element-button">Slack</a></div><!-- /wp:button -->
-<!-- wp:button --><div class="wp-block-button"><a class="wp-block-button__link wp-element-button">Microsoft Teams</a></div><!-- /wp:button -->
-<!-- wp:button --><div class="wp-block-button"><a class="wp-block-button__link wp-element-button">Google Workspace</a></div><!-- /wp:button -->
-<!-- wp:button --><div class="wp-block-button"><a class="wp-block-button__link wp-element-button">Zapier</a></div><!-- /wp:button -->
-<!-- wp:button --><div class="wp-block-button"><a class="wp-block-button__link wp-element-button">Pipedrive</a></div><!-- /wp:button -->
-<!-- wp:button --><div class="wp-block-button"><a class="wp-block-button__link wp-element-button">Zoho CRM</a></div><!-- /wp:button -->
-<!-- wp:button --><div class="wp-block-button"><a class="wp-block-button__link wp-element-button">+ 50 more</a></div><!-- /wp:button -->
+<!-- wp:html -->
+<div class="nv-igrid">
+	<div class="nv-itile"><span class="nv-mono" style="background:linear-gradient(135deg,#1C6DB0,#4FA3DE)">MT</span><span class="lbl">Microsoft Teams</span></div>
+	<div class="nv-itile"><span class="nv-mono" style="background:linear-gradient(135deg,#14548C,#2B7FC4)">CW</span><span class="lbl">ConnectWise</span></div>
+	<div class="nv-itile"><span class="nv-mono" style="background:linear-gradient(135deg,#12633B,#2E9C63)">QB</span><span class="lbl">QuickBooks Online</span></div>
+	<div class="nv-itile"><span class="nv-mono" style="background:linear-gradient(135deg,#2B7FC4,#86CDEA)">GC</span><span class="lbl">Google Contacts</span></div>
+	<div class="nv-itile"><span class="nv-mono" style="background:linear-gradient(135deg,#0C2C4A,#1C6DB0)">OL</span><span class="lbl">Outlook</span></div>
+	<div class="nv-itile more">CRM integrations available</div>
 </div>
-<!-- /wp:buttons -->
+<!-- /wp:html -->
 </section>
 <!-- /wp:group -->

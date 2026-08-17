@@ -20,25 +20,25 @@
 
 		<!-- wp:details {"style":{"color":{"background":"#ffffff"},"border":{"radius":"12px","color":"#E2E8F0","width":"1px"},"spacing":{"padding":{"top":"1.1rem","bottom":"1.1rem","left":"1.4rem","right":"1.4rem"}}}} -->
 		<details class="wp-block-details has-border-color" style="border-color:#E2E8F0;border-width:1px;border-radius:12px;background-color:#ffffff;padding:1.1rem 1.4rem"><summary style="font-weight:600">How long does it take to get set up?</summary>
-		<!-- wp:paragraph {"style":{"color":{"text":"#475569"}}} --><p style="color:#475569">Most businesses are live within a few days. We port your existing numbers, configure your call flows, and train your team — no hardware required.</p><!-- /wp:paragraph -->
+		<!-- wp:paragraph {"style":{"color":{"text":"#43526B"}}} --><p style="color:#43526B">Most businesses are live within a few days. We port your existing numbers, configure your call flows, and train your team — no hardware required.</p><!-- /wp:paragraph -->
 		</details>
 		<!-- /wp:details -->
 
 		<!-- wp:details {"style":{"color":{"background":"#ffffff"},"border":{"radius":"12px","color":"#E2E8F0","width":"1px"},"spacing":{"padding":{"top":"1.1rem","bottom":"1.1rem","left":"1.4rem","right":"1.4rem"}}}} -->
 		<details class="wp-block-details has-border-color" style="border-color:#E2E8F0;border-width:1px;border-radius:12px;background-color:#ffffff;padding:1.1rem 1.4rem"><summary style="font-weight:600">Can I keep my current phone number?</summary>
-		<!-- wp:paragraph {"style":{"color":{"text":"#475569"}}} --><p style="color:#475569">Yes. Number porting is included at no extra cost, and there's no downtime during the switch.</p><!-- /wp:paragraph -->
+		<!-- wp:paragraph {"style":{"color":{"text":"#43526B"}}} --><p style="color:#43526B">Yes. Free number porting with a smooth, hassle-free transition &mdash; we coordinate the switch with you from start to finish.</p><!-- /wp:paragraph -->
 		</details>
 		<!-- /wp:details -->
 
 		<!-- wp:details {"style":{"color":{"background":"#ffffff"},"border":{"radius":"12px","color":"#E2E8F0","width":"1px"},"spacing":{"padding":{"top":"1.1rem","bottom":"1.1rem","left":"1.4rem","right":"1.4rem"}}}} -->
 		<details class="wp-block-details has-border-color" style="border-color:#E2E8F0;border-width:1px;border-radius:12px;background-color:#ffffff;padding:1.1rem 1.4rem"><summary style="font-weight:600">What does the AI receptionist actually do?</summary>
-		<!-- wp:paragraph {"style":{"color":{"text":"#475569"}}} --><p style="color:#475569">It answers calls in a natural voice, routes callers to the right person, takes messages, and books appointments 24/7 — so you never miss an opportunity.</p><!-- /wp:paragraph -->
+		<!-- wp:paragraph {"style":{"color":{"text":"#43526B"}}} --><p style="color:#43526B">It answers calls in a natural voice, routes callers to the right person, takes messages, and books appointments 24/7 — so you never miss an opportunity.</p><!-- /wp:paragraph -->
 		</details>
 		<!-- /wp:details -->
 
 		<!-- wp:details {"style":{"color":{"background":"#ffffff"},"border":{"radius":"12px","color":"#E2E8F0","width":"1px"},"spacing":{"padding":{"top":"1.1rem","bottom":"1.1rem","left":"1.4rem","right":"1.4rem"}}}} -->
 		<details class="wp-block-details has-border-color" style="border-color:#E2E8F0;border-width:1px;border-radius:12px;background-color:#ffffff;padding:1.1rem 1.4rem"><summary style="font-weight:600">Is there a long-term contract?</summary>
-		<!-- wp:paragraph {"style":{"color":{"text":"#475569"}}} --><p style="color:#475569">No lock-in. Plans are month-to-month, and you can scale users up or down as your business changes.</p><!-- /wp:paragraph -->
+		<!-- wp:paragraph {"style":{"color":{"text":"#43526B"}}} --><p style="color:#43526B">No lock-in. Plans are month-to-month, and you can scale users up or down as your business changes.</p><!-- /wp:paragraph -->
 		</details>
 		<!-- /wp:details -->
 

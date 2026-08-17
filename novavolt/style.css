@@ -7,17 +7,11 @@ Description: Custom enterprise block theme for NovaVolt Systems — modern busin
 Requires at least: 6.4
 Tested up to: 6.6
 Requires PHP: 7.4
-Version: 3.9.0
+Version: 4.0.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: novavolt
 */
-
-/* ==========================================================================
-   NovaVolt — custom polish layer
-   Design tokens live in theme.json; this file adds interaction states,
-   gradients, and refinements the editor can't express.
-   ========================================================================== */
 
 :root {
   --nv-transition: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
@@ -26,248 +20,79 @@ Text Domain: novavolt
   --nv-shadow-lg: 0 20px 40px -12px rgba(10, 30, 70, 0.18);
   --nv-glow: 0 8px 30px rgba(43, 127, 196, 0.35);
 }
-
 html { scroll-behavior: smooth; }
+body { -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
 
-body {
-  -webkit-font-smoothing: antialiased;
-  text-rendering: optimizeLegibility;
-}
-
-/* --- Sticky, blurred site header --- */
 .wp-site-blocks > header.wp-block-template-part {
-  position: sticky;
-  top: 0;
-  z-index: 100;
+  position: sticky; top: 0; z-index: 100;
   background: rgba(255, 255, 255, 0.82);
   backdrop-filter: saturate(180%) blur(14px);
   -webkit-backdrop-filter: saturate(180%) blur(14px);
   border-bottom: 1px solid var(--wp--preset--color--border);
 }
+.wp-block-navigation .wp-block-navigation-item__content { font-weight: 500; color: var(--wp--preset--color--navy); transition: color var(--nv-transition); }
+.wp-block-navigation .wp-block-navigation-item__content:hover { color: var(--wp--preset--color--primary); }
 
-/* --- Navigation --- */
-.wp-block-navigation .wp-block-navigation-item__content {
-  font-weight: 500;
-  color: var(--wp--preset--color--navy);
-  transition: color var(--nv-transition);
-}
-.wp-block-navigation .wp-block-navigation-item__content:hover {
-  color: var(--wp--preset--color--primary);
-}
+.wp-block-button__link { font-weight: 600; letter-spacing: 0.01em; transition: transform var(--nv-transition), box-shadow var(--nv-transition), background var(--nv-transition); border-radius: 999px !important; }
+.wp-block-button.is-style-fill .wp-block-button__link { background: linear-gradient(135deg, var(--wp--preset--color--primary) 0%, var(--wp--preset--color--primary-bright) 100%); box-shadow: var(--nv-glow); }
+.wp-block-button.is-style-fill .wp-block-button__link:hover { transform: translateY(-2px); box-shadow: 0 12px 34px rgba(43, 127, 196, 0.45); }
+.wp-block-button.is-style-outline .wp-block-button__link { border-width: 1.5px; }
+.wp-block-button.is-style-outline .wp-block-button__link:hover { background: var(--wp--preset--color--primary); color: #fff; border-color: var(--wp--preset--color--primary); transform: translateY(-2px); }
 
-/* --- Buttons --- */
-.wp-block-button__link {
-  font-weight: 600;
-  letter-spacing: 0.01em;
-  transition: transform var(--nv-transition), box-shadow var(--nv-transition), background var(--nv-transition);
-}
-.wp-block-button.is-style-fill .wp-block-button__link {
-  background: linear-gradient(135deg, var(--wp--preset--color--primary) 0%, var(--wp--preset--color--primary-bright) 100%);
-  box-shadow: var(--nv-glow);
-}
-.wp-block-button.is-style-fill .wp-block-button__link:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 12px 34px rgba(43, 127, 196, 0.45);
-}
-.wp-block-button.is-style-outline .wp-block-button__link {
-  border-width: 1.5px;
-}
-.wp-block-button.is-style-outline .wp-block-button__link:hover {
-  background: var(--wp--preset--color--primary);
-  color: #fff;
-  border-color: var(--wp--preset--color--primary);
-  transform: translateY(-2px);
-}
-
-/* --- Hero gradient backdrop --- */
-.nv-hero {
-  position: relative;
-  overflow: hidden;
-  background:
-    radial-gradient(900px 500px at 85% -10%, rgba(79, 163, 222, 0.30), transparent 60%),
-    radial-gradient(700px 500px at 0% 110%, rgba(134, 205, 234, 0.20), transparent 55%),
-    linear-gradient(180deg, var(--wp--preset--color--navy-deep) 0%, var(--wp--preset--color--navy) 100%);
-}
-.nv-hero * { position: relative; z-index: 1; }
-.nv-hero::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-image: linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
-                    linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
-  background-size: 44px 44px;
-  mask-image: radial-gradient(circle at 60% 40%, #000 0%, transparent 70%);
-  z-index: 0;
-}
-.nv-eyebrow {
-  display: inline-block;
-  font-size: 0.8rem;
-  font-weight: 600;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--wp--preset--color--primary-bright);
-  padding: 0.4rem 0.9rem;
-  border: 1px solid rgba(134, 205, 234, 0.45);
-  border-radius: 999px;
-  background: rgba(79, 163, 222, 0.12);
-}
-
-/* --- Cards --- */
-.nv-card {
-  background: #fff;
-  border: 1px solid var(--wp--preset--color--border);
-  border-radius: 16px;
-  box-shadow: var(--nv-shadow-sm);
-  transition: transform var(--nv-transition), box-shadow var(--nv-transition), border-color var(--nv-transition);
-  height: 100%;
-}
-.nv-card:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--nv-shadow-lg);
-  border-color: rgba(43, 127, 196, 0.4);
-}
-.nv-icon {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 52px;
-  height: 52px;
-  border-radius: 13px;
-  font-size: 1.5rem;
-  background: linear-gradient(135deg, rgba(43,127,196,0.12), rgba(134,205,234,0.16));
-  color: var(--wp--preset--color--primary);
-  margin-bottom: 0.25rem;
-}
-
-/* --- Trust bar --- */
-.nv-trust { opacity: 0.75; }
-.nv-trust .wp-block-heading,
-.nv-trust p { color: var(--wp--preset--color--muted); }
-
-/* --- Stats --- */
-.nv-stat .wp-block-heading {
-  background: linear-gradient(135deg, var(--wp--preset--color--primary-bright), var(--wp--preset--color--accent));
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  line-height: 1;
-}
-
-/* --- CTA band --- */
-.nv-cta {
-  background:
-    radial-gradient(600px 300px at 100% 0%, rgba(34, 211, 238, 0.2), transparent 60%),
-    linear-gradient(135deg, var(--wp--preset--color--primary) 0%, var(--wp--preset--color--navy) 100%);
-  border-radius: 24px;
-}
-
-/* --- Section headings --- */
-.nv-kicker {
-  font-size: 0.82rem;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--wp--preset--color--primary);
-}
-
-/* --- Footer --- */
-.wp-site-blocks > footer .wp-block-navigation a,
-.wp-site-blocks > footer a {
-  color: rgba(255, 255, 255, 0.72);
-  transition: color var(--nv-transition);
-}
-.wp-site-blocks > footer a:hover { color: #fff; }
-
-/* --- Legacy .nv-reveal class (scroll-reveal removed in 2.0.2) ---
-   The class still appears in some pattern markup, so it must never hide content. */
-.nv-reveal { opacity: 1; transform: none; }
-@media (prefers-reduced-motion: reduce) {
-  html { scroll-behavior: auto; }
-}
-
-/* --- Responsive --- */
-@media (max-width: 781px) {
-  .nv-hero { text-align: center; }
-  .nv-hero .wp-block-buttons { justify-content: center; }
-}
-
-/* ==========================================================================
-   V2 redesign layer (reference-inspired: RingCentral / Dialpad / Aircall)
-   ========================================================================== */
 .wp-block-site-logo { margin: 0; }
 .wp-block-site-logo img { max-height: 52px !important; width: auto !important; height: auto !important; }
-.wp-block-button__link { border-radius: 999px !important; }
+
+.nv-card { background: #fff; border: 1px solid var(--wp--preset--color--border); border-radius: 16px; box-shadow: var(--nv-shadow-sm); transition: transform var(--nv-transition), box-shadow var(--nv-transition), border-color var(--nv-transition); height: 100%; position: relative; overflow: hidden; }
+.nv-card:hover { transform: translateY(-4px); box-shadow: var(--nv-shadow-lg); border-color: rgba(43, 127, 196, 0.4); }
+.nv-card::before { content: ""; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, #2B7FC4, #86CDEA); opacity: 0; transition: opacity .25s; }
+.nv-card:hover::before { opacity: 1; }
+.nv-icon { display: inline-flex; align-items: center; justify-content: center; width: 52px; height: 52px; border-radius: 13px; font-size: 1.5rem; background: linear-gradient(135deg, rgba(43,127,196,0.12), rgba(134,205,234,0.16)); color: var(--wp--preset--color--primary); margin-bottom: 0.25rem; }
+
+.nv-stat .wp-block-heading { background: linear-gradient(135deg, var(--wp--preset--color--primary-bright), var(--wp--preset--color--accent)); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; line-height: 1; }
+.nv-cta { background: radial-gradient(600px 300px at 100% 0%, rgba(34, 211, 238, 0.2), transparent 60%), linear-gradient(135deg, var(--wp--preset--color--primary) 0%, var(--wp--preset--color--navy) 100%); border-radius: 24px; }
+.nv-kicker { font-size: 0.82rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--wp--preset--color--primary); }
+.wp-site-blocks > footer .wp-block-navigation a, .wp-site-blocks > footer a { color: rgba(255, 255, 255, 0.72); transition: color var(--nv-transition); }
+.wp-site-blocks > footer a:hover { color: #fff; }
+
+.nv-reveal{opacity:1;transform:none}
+.nv-reveal.is-visible { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) { .nv-reveal{opacity:1;transform:none} html { scroll-behavior: auto; } }
+
 .nv-hero2{position:relative;overflow:hidden;border-radius:28px;border:1px solid #DEE9F3;background:radial-gradient(700px 420px at 90% 8%,rgba(134,205,234,.45),transparent 60%),radial-gradient(600px 420px at 4% 95%,rgba(79,163,222,.30),transparent 55%),linear-gradient(160deg,#EAF4FB,#F8FCFE 55%,#ECF5FB)}
 .nv-eyebrow2{display:inline-block;font-size:.78rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#2B7FC4;padding:.45rem 1rem;border:1px solid rgba(43,127,196,.3);border-radius:999px;background:rgba(255,255,255,.65);margin:0 0 .4rem}
-.nv-mockwrap{position:relative;padding:14px 0}
+.nv-hero2 h1{font-size:clamp(2.5rem,1.1rem+2.3vw,4.6rem)!important;line-height:1.06!important;letter-spacing:-.03em}
+.nv-hero2 p{max-width:56ch}
+.nv-hero2 .wp-block-columns{max-width:none!important}
+.nv-mockwrap{position:relative;padding:14px 0;max-width:580px;margin-left:auto}
 .nv-mockup{background:#fff;border:1px solid #DEE9F3;border-radius:18px;box-shadow:0 30px 70px -24px rgba(18,60,99,.35);overflow:hidden}
 .nv-mockbar{display:flex;align-items:center;gap:6px;padding:12px 16px;border-bottom:1px solid #EEF4FA;background:#F8FBFD}
 .nv-dot{width:10px;height:10px;border-radius:50%;display:inline-block}
 .nv-mocktitle{margin-left:10px;font-size:.78rem;font-weight:600;color:#6C8AA5}
-.nv-mockbody{padding:1.2rem;display:flex;flex-direction:column;gap:.9rem}
-.nv-mockrow{display:flex;align-items:center;gap:.75rem;color:#123C63;font-size:.95rem}
 .nv-live{font-size:.8rem;color:#177245}
-.nv-livedot{display:inline-block;width:8px;height:8px;border-radius:50%;background:#28C840;margin-right:6px;animation:nvpulse 1.6s infinite}
-@keyframes nvpulse{0%,100%{opacity:1}50%{opacity:.35}}
 .nv-mock-bubble{background:#F1F7FC;border-radius:12px;padding:.9rem 1rem;font-size:.92rem;line-height:1.5;color:#123C63}
-.nv-mockstats{display:flex;border-top:1px solid #EEF4FA;padding-top:.9rem;gap:1.5rem}
-.nv-mockstats div{display:flex;flex-direction:column}
-.nv-mockstats strong{font-size:1.15rem;color:#123C63;letter-spacing:-.02em}
-.nv-mockstats span{font-size:.72rem;color:#6C8AA5}
 .nv-chip{display:inline-flex;align-items:center;gap:.4rem;padding:.45rem .95rem;border-radius:999px;background:#fff;border:1px solid #DEE9F3;font-size:.8rem;font-weight:600;color:#123C63;box-shadow:0 6px 18px rgba(18,60,99,.10)}
 .nv-chip.ok{background:#E8F7EE;border-color:#BFE8CE;color:#177245}
 .nv-float{position:absolute;z-index:2}
 .nv-avatar{width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,#2B7FC4,#86CDEA);color:#fff;display:inline-flex;align-items:center;justify-content:center;font-weight:700;flex:none}
-.nv-pillgrid{display:flex;flex-wrap:wrap;gap:.8rem;justify-content:center;max-width:760px;margin:0 auto}
-.nv-pill{display:inline-flex;padding:.65rem 1.3rem;border-radius:999px;background:#fff;border:1px solid #DEE9F3;font-weight:600;font-size:.95rem;color:#123C63;transition:border-color .2s,transform .2s,box-shadow .2s}
-.nv-pill:hover{border-color:#2B7FC4;transform:translateY(-2px);box-shadow:0 8px 20px rgba(18,60,99,.10)}
-.nv-sec-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1.25rem}
-.nv-sec-card{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:16px;padding:1.6rem;color:#fff}
-.nv-sec-card .ic{font-size:1.6rem;display:block;margin-bottom:.6rem}
-.nv-sec-card strong{display:block;margin-bottom:.35rem;font-size:1.02rem}
-.nv-sec-card span{color:rgba(255,255,255,.65);font-size:.9rem;line-height:1.55}
-.nv-tgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem}
-.nv-tcard{background:#fff;border:1px solid #DEE9F3;border-radius:16px;padding:1.85rem;box-shadow:0 1px 2px rgba(11,18,32,.05);display:flex;flex-direction:column;gap:1rem}
-.nv-tcard .stars{color:#f59e0b;letter-spacing:2px}
-.nv-tcard blockquote{margin:0;font-size:1.02rem;line-height:1.6;color:#123C63}
-.nv-tmeta{display:flex;align-items:center;gap:.8rem}
-.nv-tmeta strong{display:block;font-size:.95rem;color:#123C63}
-.nv-tmeta span{font-size:.82rem;color:#64748B}
-.nv-quote-featured{background:linear-gradient(135deg,#F1F7FC,#fff);border:1px solid #DEE9F3;border-left:4px solid #2B7FC4;border-radius:18px;padding:2.4rem;margin-bottom:1.5rem}
-.nv-quote-featured blockquote{margin:0;font-size:1.35rem;line-height:1.55;font-weight:600;letter-spacing:-.01em;color:#123C63}
-@media (max-width:781px){.nv-float{display:none}.nv-hero2{border-radius:20px}.nv-quote-featured{padding:1.6rem}.nv-quote-featured blockquote{font-size:1.1rem}}
+.nv-quote-featured{background:linear-gradient(135deg,#F1F7FC,#fff);border:1px solid #DEE9F3;border-left:4px solid #2B7FC4;border-radius:18px;padding:2.4rem}
+.nv-tcard{background:#fff;border:1px solid #DEE9F3;border-radius:16px;padding:1.85rem;box-shadow:0 1px 2px rgba(11,18,32,.05)}
+@media(max-width:781px){.nv-float{display:none}.nv-hero2{border-radius:20px}.nv-quote-featured{padding:1.6rem}.nv-quote-featured .nv-qtext{font-size:1.1rem}.nv-mockwrap{margin:0 auto;max-width:100%}}
 
-/* Large-display scaling — grow the whole design, don't stretch it */
 @media(min-width:1600px){html{font-size:17px}}
 @media(min-width:2100px){html{font-size:18.5px}}
-.nv-mockwrap{max-width:580px;margin-left:auto}
-.nv-hero2 .wp-block-columns{max-width:none!important}
-@media(max-width:781px){.nv-mockwrap{margin:0 auto;max-width:100%}}
 @media(min-width:1600px){
 .nv-card{padding:2.3rem!important}
 .nv-mockup{border-radius:22px}
-.nv-sec-card{padding:2rem}
 .nv-tcard{padding:2.2rem}
-}
-
-/* Fluid scaling for large displays */
-.nv-hero2 h1{font-size:clamp(2.5rem,1.1rem+2.3vw,4.6rem)!important;line-height:1.06!important}
-.nv-hero2 p{max-width:56ch}
-@media(min-width:1600px){
 .nv-hero2{padding:var(--wp--preset--spacing--60)!important}
-.nv-mockbody{padding:1.6rem;gap:1.1rem}
-.nv-mock-bubble{font-size:1.02rem}
+.nv-mockbody{padding:1.6rem!important}
 h2.wp-block-heading{font-size:clamp(2rem,1rem+1.4vw,3.4rem)}
 }
 
-/* Grid balance — explicit responsive columns */
 @media(min-width:1200px){.wp-block-group.is-layout-grid{grid-template-columns:repeat(3,1fr)!important}}
 @media(min-width:782px) and (max-width:1199px){.wp-block-group.is-layout-grid{grid-template-columns:repeat(2,1fr)!important}}
 @media(max-width:781px){.wp-block-group.is-layout-grid{grid-template-columns:1fr!important}}
 
-/* ==========================================================================
-   V3 — editable core-block pattern support
-   ========================================================================== */
 p.nv-chip{margin:0}
 .nv-avatar-sm{width:38px;height:38px;font-size:.8rem}
 .nv-float-tr{top:0;right:6px}
@@ -279,7 +104,6 @@ p.nv-msl{font-size:.72rem;color:#6C8AA5;margin:0}
 p.nv-logo{font-weight:800;font-size:1.15rem;color:#9DB4C8;letter-spacing:-.02em;margin:0;white-space:nowrap}
 p.nv-avatar{margin:0}
 .nv-qtext{font-size:1.35rem;line-height:1.55;font-weight:600;letter-spacing:-.01em;color:#123C63}
-.nv-tcard{display:block}
 .nv-tcard p{margin-top:0}
 .nv-sec-card2{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:16px;padding:1.6rem;height:100%}
 .nv-sec-card2 .nv-sec-icon{font-size:1.6rem;margin:0}
@@ -289,19 +113,6 @@ p.nv-avatar{margin:0}
 .nv-pillgrid .wp-block-button__link:hover{border-color:#2B7FC4!important;color:#2B7FC4!important;transform:translateY(-2px)}
 @media(max-width:781px){p.nv-logo{font-size:1rem}}
 
-/* Animations (applied by reveal.js — markup stays editable) */
-.nv-livedot{display:inline-block;width:8px;height:8px;border-radius:50%;background:#28C840;margin-right:6px;animation:nvpulse 1.6s infinite}
-@keyframes nvpulse{0%,100%{opacity:1}50%{opacity:.35}}
-.nv-marquee{display:block!important;overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent);mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent)}
-.nv-mscroll{display:flex;width:max-content;animation:nvscroll 30s linear infinite}
-.nv-mtrack{display:flex;gap:3rem;padding-right:3rem;align-items:center}
-.nv-marquee:hover .nv-mscroll{animation-play-state:paused}
-@keyframes nvscroll{to{transform:translateX(-50%)}}
-
-/* Featured quote: left-align content inside the card */
-.nv-quote-featured > *{max-width:none!important;margin-left:0!important;margin-right:0!important}
-
-/* Forms (Contact Form 7) */
 .nv-formcard{background:#fff;border:1px solid #DEE9F3;border-radius:18px;padding:2.2rem;box-shadow:0 10px 34px rgba(18,60,99,.08)}
 .wpcf7 input[type=text],.wpcf7 input[type=email],.wpcf7 input[type=tel],.wpcf7 textarea{width:100%;border:1px solid #DEE9F3;border-radius:10px;padding:.8rem 1rem;font:inherit;color:#123C63;background:#fff;margin-top:.35rem}
 .wpcf7 input:focus,.wpcf7 textarea:focus{outline:2px solid #2B7FC4;outline-offset:1px;border-color:#2B7FC4}
@@ -314,17 +125,75 @@ footer .wpcf7 input[type=email]::placeholder{color:rgba(255,255,255,.5)}
 footer .wpcf7 input[type=submit]{margin-top:.6rem;padding:.65rem 1.4rem;font-size:.9rem}
 footer .wpcf7 .wpcf7-not-valid-tip,footer .wpcf7 .wpcf7-response-output{color:#86CDEA;font-size:.8rem}
 
-/* Reduced motion — disable decorative animation */
 @media(prefers-reduced-motion:reduce){
-.nv-marquee{mask-image:none!important;-webkit-mask-image:none!important}
-.nv-livedot{animation:none!important}
-.nv-mscroll{animation:none!important}
 .nv-card:hover,.nv-pill:hover,.wp-block-button__link:hover{transform:none!important}
 }
+
+.wp-block-details{color:#123C63!important}
+.wp-block-details summary{color:#123C63!important;font-weight:600;font-size:1.05rem;cursor:pointer}
+.wp-block-details summary::marker{color:#2B7FC4}
+.wp-block-details p{color:#475569!important}
+
+
+/* Animations (applied by reveal.js — markup stays editable) */
+.nv-livedot{display:inline-block;width:8px;height:8px;border-radius:50%;background:#28C840;margin-right:6px;animation:nvpulse 1.6s infinite}
+@keyframes nvpulse{0%,100%{opacity:1}50%{opacity:.35}}
+.nv-marquee{display:block!important;overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent);mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent)}
+.nv-mscroll{display:flex;width:max-content;animation:nvscroll 30s linear infinite}
+.nv-mtrack{display:flex;gap:3rem;padding-right:3rem;align-items:center}
+.nv-marquee:hover .nv-mscroll{animation-play-state:paused}
+@keyframes nvscroll{to{transform:translateX(-50%)}}
+
+/* Reveal on scroll */
+.nv-reveal{opacity:1;transform:none}
+.nv-reveal.is-visible{opacity:1;transform:none}
+
+/* Featured quote: left-align content inside the card */
+.nv-quote-featured > *{max-width:none!important;margin-left:0!important;margin-right:0!important}
+
+@media(prefers-reduced-motion:reduce){
+.nv-livedot{animation:none!important}
+.nv-mscroll{animation:none!important}
+.nv-reveal{opacity:1;transform:none}
+}
+
 
 /* nv-reveal-note: scroll-reveal removed in 2.0.2 — the class may still exist in
    older pattern markup, so it must never hide content. */
 .nv-reveal{opacity:1!important;transform:none!important}
+
+
+/* ==========================================================================
+   Icons — inline SVG replaces emoji (2.1.0)
+   ========================================================================== */
+.nv-svg{width:26px;height:26px;display:block;stroke:currentColor}
+.nv-icon{display:inline-flex;align-items:center;justify-content:center;width:52px;height:52px;border-radius:14px;background:linear-gradient(135deg,rgba(43,127,196,.12),rgba(134,205,234,.20));color:#2B7FC4;margin-bottom:.35rem;transition:transform .25s cubic-bezier(.4,0,.2,1),background .25s,color .25s}
+.nv-card:hover .nv-icon{transform:translateY(-2px) scale(1.06);background:linear-gradient(135deg,#2B7FC4,#4FA3DE);color:#fff}
+.nv-card:hover .nv-icon .nv-svg{animation:nvicon .5s ease}
+@keyframes nvicon{0%{transform:rotate(-8deg) scale(.94)}60%{transform:rotate(4deg) scale(1.04)}100%{transform:none}}
+.nv-sec-icon{display:inline-flex;align-items:center;justify-content:center;width:46px;height:46px;border-radius:12px;background:rgba(134,205,234,.14);color:#86CDEA;margin-bottom:.55rem;transition:background .25s,color .25s,transform .25s}
+.nv-sec-card2:hover .nv-sec-icon{background:rgba(134,205,234,.26);color:#fff;transform:translateY(-2px)}
+.nv-sec-icon .nv-svg{width:24px;height:24px}
+/* chip icons (hero) */
+.nv-chip.has-ico::before{content:"";width:15px;height:15px;margin-right:.15rem;background:currentColor;-webkit-mask-repeat:no-repeat;mask-repeat:no-repeat;-webkit-mask-position:center;mask-position:center;-webkit-mask-size:contain;mask-size:contain;flex:none}
+.nv-chip.ico-bolt{color:#B8860B}
+.nv-chip.ico-bolt::before{-webkit-mask-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpolygon points='13,2.5 4.5,13.5 11,13.5 10.5,21.5 19.5,10.5 13,10.5' fill='black'/%3E%3C/svg%3E");mask-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpolygon points='13,2.5 4.5,13.5 11,13.5 10.5,21.5 19.5,10.5 13,10.5' fill='black'/%3E%3C/svg%3E")}
+.nv-chip.ico-cloud{color:#2B7FC4}
+.nv-chip.ico-cloud::before{-webkit-mask-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7.5 18.5h9.8a3.7 3.7 0 0 0 .4-7.3A5.6 5.6 0 0 0 6.9 9.6a4.5 4.5 0 0 0 .6 8.9z' fill='black'/%3E%3C/svg%3E");mask-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7.5 18.5h9.8a3.7 3.7 0 0 0 .4-7.3A5.6 5.6 0 0 0 6.9 9.6a4.5 4.5 0 0 0 .6 8.9z' fill='black'/%3E%3C/svg%3E")}
+.nv-chip.ico-bolt::before{animation:nvflash 2.6s ease-in-out infinite}
+@keyframes nvflash{0%,88%,100%{opacity:1}92%{opacity:.35}96%{opacity:1}}
+@media(prefers-reduced-motion:reduce){
+.nv-chip.ico-bolt::before{animation:none}
+.nv-card:hover .nv-icon,.nv-card:hover .nv-icon .nv-svg,.nv-sec-card2:hover .nv-sec-icon{transform:none;animation:none}
+}
+
+
+/* Seamless sections — remove the default block gap between full-width bands
+   (kept scoped to .alignfull so blog/post paragraph spacing is untouched) */
+.wp-block-post-content > .alignfull{margin-block-start:0!important;margin-block-end:0!important}
+.wp-site-blocks > main{margin-block-start:0!important}
+.wp-site-blocks > main > .wp-block-post-content{margin-block-start:0!important}
+
 
 /* ==========================================================================
    Service pages (2.2.0)
@@ -347,50 +216,13 @@ footer .wpcf7 .wpcf7-not-valid-tip,footer .wpcf7 .wpcf7-response-output{color:#8
 .nv-kv span{font-size:.75rem;color:#6C8AA5}
 @media(max-width:781px){.nv-panel{padding:1.4rem}}
 
-/* Seamless sections — remove the default block gap between full-width bands
-   (scoped to .alignfull so blog/post paragraph spacing is untouched) */
-.wp-block-post-content > .alignfull{margin-block-start:0!important;margin-block-end:0!important}
-.wp-site-blocks > main{margin-block-start:0!important}
-.wp-site-blocks > main > .wp-block-post-content{margin-block-start:0!important}
-
-/* ==========================================================================
-   Icons — inline SVG replaces emoji (2.1.0)
-   ========================================================================== */
-.nv-svg{width:26px;height:26px;display:block;stroke:currentColor}
-.nv-icon{display:inline-flex;align-items:center;justify-content:center;width:52px;height:52px;border-radius:14px;background:linear-gradient(135deg,rgba(43,127,196,.12),rgba(134,205,234,.20));color:#2B7FC4;margin-bottom:.35rem;transition:transform .25s cubic-bezier(.4,0,.2,1),background .25s,color .25s}
-.nv-card:hover .nv-icon{transform:translateY(-2px) scale(1.06);background:linear-gradient(135deg,#2B7FC4,#4FA3DE);color:#fff}
-.nv-card:hover .nv-icon .nv-svg{animation:nvicon .5s ease}
-@keyframes nvicon{0%{transform:rotate(-8deg) scale(.94)}60%{transform:rotate(4deg) scale(1.04)}100%{transform:none}}
-.nv-sec-icon{display:inline-flex;align-items:center;justify-content:center;width:46px;height:46px;border-radius:12px;background:rgba(134,205,234,.14);color:#86CDEA;margin-bottom:.55rem;transition:background .25s,color .25s,transform .25s}
-.nv-sec-card2:hover .nv-sec-icon{background:rgba(134,205,234,.26);color:#fff;transform:translateY(-2px)}
-.nv-sec-icon .nv-svg{width:24px;height:24px}
-/* chip icons (hero) */
-.nv-chip.has-ico::before{content:"";width:15px;height:15px;margin-right:.15rem;background:currentColor;-webkit-mask-repeat:no-repeat;mask-repeat:no-repeat;-webkit-mask-position:center;mask-position:center;-webkit-mask-size:contain;mask-size:contain;flex:none}
-.nv-chip.ico-bolt{color:#B8860B}
-.nv-chip.ico-bolt::before{-webkit-mask-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpolygon points='13,2.5 4.5,13.5 11,13.5 10.5,21.5 19.5,10.5 13,10.5' fill='black'/%3E%3C/svg%3E");mask-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpolygon points='13,2.5 4.5,13.5 11,13.5 10.5,21.5 19.5,10.5 13,10.5' fill='black'/%3E%3C/svg%3E");animation:nvflash 2.6s ease-in-out infinite}
-.nv-chip.ico-cloud{color:#2B7FC4}
-.nv-chip.ico-cloud::before{-webkit-mask-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7.5 18.5h9.8a3.7 3.7 0 0 0 .4-7.3A5.6 5.6 0 0 0 6.9 9.6a4.5 4.5 0 0 0 .6 8.9z' fill='black'/%3E%3C/svg%3E");mask-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M7.5 18.5h9.8a3.7 3.7 0 0 0 .4-7.3A5.6 5.6 0 0 0 6.9 9.6a4.5 4.5 0 0 0 .6 8.9z' fill='black'/%3E%3C/svg%3E")}
-@keyframes nvflash{0%,88%,100%{opacity:1}92%{opacity:.35}96%{opacity:1}}
-@media(prefers-reduced-motion:reduce){
-.nv-chip.ico-bolt::before{animation:none}
-.nv-card:hover .nv-icon,.nv-card:hover .nv-icon .nv-svg,.nv-sec-card2:hover .nv-sec-icon{transform:none;animation:none}
-}
-
-/* FAQ (details) readability — force colors against plugin/UA overrides */
-.wp-block-details{color:#123C63!important}
-.wp-block-details summary{color:#123C63!important;font-weight:600;font-size:1.05rem;cursor:pointer}
-.wp-block-details summary::marker{color:#2B7FC4}
-.wp-block-details p{color:#475569!important}
 
 /* ==========================================================================
    NovaVolt Design System v3 — depth, contrast, motion (3.0.0)
-   Used by the service pages (dark hero, bento grid, timeline) and the
-   upgraded homepage integrations tiles.
    ========================================================================== */
 .nv-grad{background:linear-gradient(100deg,#4FA3DE 0%,#86CDEA 45%,#2B7FC4 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
 .nv-grad-dark{background:linear-gradient(100deg,#123C63 0%,#2B7FC4 55%,#4FA3DE 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
 
-/* Dark hero */
 .nv-dhero{position:relative;overflow:hidden;background:#081A2F}
 .nv-dhero::before{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(900px 520px at 78% 6%,rgba(79,163,222,.42),transparent 62%),radial-gradient(700px 480px at 8% 96%,rgba(134,205,234,.24),transparent 60%),radial-gradient(500px 320px at 45% 40%,rgba(43,127,196,.20),transparent 70%)}
 .nv-dhero::after{content:"";position:absolute;inset:0;pointer-events:none;background-image:linear-gradient(rgba(255,255,255,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.045) 1px,transparent 1px);background-size:56px 56px;-webkit-mask-image:radial-gradient(circle at 70% 35%,#000 0%,transparent 72%);mask-image:radial-gradient(circle at 70% 35%,#000 0%,transparent 72%)}
@@ -401,9 +233,8 @@ footer .wpcf7 .wpcf7-not-valid-tip,footer .wpcf7 .wpcf7-response-output{color:#8
 .nv-badge{display:inline-flex;align-items:center;gap:.5rem;font-size:.76rem;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:#BFE4F7;padding:.5rem 1.05rem;border-radius:999px;background:rgba(134,205,234,.10);border:1px solid rgba(134,205,234,.28);margin:0 0 1.1rem}
 .nv-badge::before{content:"";width:6px;height:6px;border-radius:50%;background:#86CDEA;box-shadow:0 0 0 4px rgba(134,205,234,.18)}
 
-/* Glass panel */
 .nv-glass{background:linear-gradient(160deg,rgba(255,255,255,.12),rgba(255,255,255,.05));border:1px solid rgba(255,255,255,.16);border-radius:20px;padding:1.9rem;backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);box-shadow:0 30px 70px -30px rgba(0,0,0,.65)}
-.nv-glass h3{color:#fff;font-size:1.05rem;margin:0 0 1rem}
+.nv-glass h3,.nv-glass h2{color:#fff;font-size:1.05rem;margin:0 0 1rem}
 .nv-glist{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:.8rem}
 .nv-glist li{display:flex;gap:.7rem;align-items:flex-start;color:rgba(255,255,255,.82);font-size:.97rem;line-height:1.5}
 .nv-glist li::before{content:"";flex:none;width:21px;height:21px;margin-top:.1rem;border-radius:50%;background:rgba(134,205,234,.18) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2386CDEA' stroke-width='2.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6,12.5 10,16.5 18,7.5'/%3E%3C/svg%3E") center/13px no-repeat}
@@ -412,7 +243,6 @@ footer .wpcf7 .wpcf7-not-valid-tip,footer .wpcf7 .wpcf7-response-output{color:#8
 .nv-gkv strong{font-size:1.5rem;color:#fff;letter-spacing:-.03em;line-height:1}
 .nv-gkv span{font-size:.72rem;color:rgba(255,255,255,.55);margin-top:.25rem}
 
-/* Bento grid */
 .nv-bento{display:grid;grid-template-columns:repeat(6,1fr);gap:1.25rem}
 .nv-bento > *{grid-column:span 2}
 .nv-bento > .b-wide{grid-column:span 3}
@@ -431,7 +261,6 @@ footer .wpcf7 .wpcf7-not-valid-tip,footer .wpcf7 .wpcf7-response-output{color:#8
 .nv-tile.b-hero p{color:rgba(255,255,255,.75);max-width:60ch}
 .nv-tile.b-hero .nv-icon{background:rgba(255,255,255,.14);color:#BFE4F7}
 
-/* Alternating feature row visual */
 .nv-visual{position:relative;border-radius:22px;padding:1.6rem;background:linear-gradient(150deg,#EAF4FB,#F8FCFE);border:1px solid #DEE9F3;box-shadow:0 26px 60px -30px rgba(18,60,99,.5)}
 .nv-vrow{display:flex;align-items:center;gap:.85rem;background:#fff;border:1px solid #E6F0F8;border-radius:14px;padding:.9rem 1rem;margin-bottom:.7rem;box-shadow:0 4px 14px rgba(18,60,99,.06)}
 .nv-vrow:last-child{margin-bottom:0}
@@ -441,7 +270,6 @@ footer .wpcf7 .wpcf7-not-valid-tip,footer .wpcf7 .wpcf7-response-output{color:#8
 .nv-vrow small{font-size:.8rem;color:#6C8AA5}
 .nv-vtag{margin-left:auto;font-size:.72rem;font-weight:700;color:#177245;background:#E8F7EE;border:1px solid #BFE8CE;padding:.25rem .6rem;border-radius:999px}
 
-/* Timeline steps */
 .nv-track{position:relative}
 .nv-track::before{content:"";position:absolute;top:23px;left:8%;right:8%;height:2px;background:linear-gradient(90deg,transparent,#4FA3DE 15%,#86CDEA 50%,#4FA3DE 85%,transparent)}
 @media(max-width:781px){.nv-track::before{display:none}}
@@ -450,28 +278,29 @@ footer .wpcf7 .wpcf7-not-valid-tip,footer .wpcf7 .wpcf7-response-output{color:#8
 .nv-tstep h3{font-size:1.1rem;margin:0 0 .4rem}
 .nv-tstep p{color:#5C7A94;margin:0;font-size:.96rem;line-height:1.6}
 
-/* Eyebrow with rules */
 .nv-eyeline{display:flex;align-items:center;justify-content:center;gap:.7rem;font-size:.78rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#2B7FC4;margin:0 0 .6rem}
 .nv-eyeline::before,.nv-eyeline::after{content:"";width:26px;height:1px;background:linear-gradient(90deg,transparent,#8FC4E8)}
+@media(prefers-reduced-motion:reduce){.nv-tile:hover{transform:none}}
 
-/* Integration tiles (replaces plain pills) */
+
+/* --- Integration tiles (replaces plain pills) --- */
 .nv-igrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1rem;max-width:1000px;margin:0 auto}
 .nv-itile{display:flex;align-items:center;gap:.75rem;background:#fff;border:1px solid #E3EDF6;border-radius:14px;padding:.95rem 1.1rem;transition:transform .25s,box-shadow .25s,border-color .25s}
 .nv-itile:hover{transform:translateY(-3px);box-shadow:0 18px 34px -18px rgba(18,60,99,.4);border-color:#BFDCF2}
 .nv-mono{flex:none;width:34px;height:34px;border-radius:9px;display:inline-flex;align-items:center;justify-content:center;font-weight:800;font-size:.9rem;color:#fff;letter-spacing:-.02em}
 .nv-itile span.lbl{font-weight:600;font-size:.95rem;color:#123C63;line-height:1.2}
 .nv-itile.more{border-style:dashed;justify-content:center;color:#2B7FC4;font-weight:700}
+@media(prefers-reduced-motion:reduce){.nv-itile:hover{transform:none}}
 
-@media(prefers-reduced-motion:reduce){.nv-tile:hover,.nv-itile:hover{transform:none}}
 
 /* ==========================================================================
-   QA pass — WCAG AA contrast + polish (3.1.x)
+   QA pass — WCAG AA contrast + polish (3.1.0)
    Accessible on-light blue #1C6DB0 (5.6:1) replaces #2B7FC4 for small text.
-   Brand #2B7FC4 stays for fills, icons and large display type.
+   Brand #2B7FC4 stays for fills, icons and large display use.
    ========================================================================== */
 .nv-kicker,.nv-eyebrow2,.nv-eyeline{color:#1C6DB0}
-p.nv-logo{color:#5C7893}
-p.nv-msl,.nv-msl,.nv-mocktitle,p.nv-mocktitle,.nv-crumb,.nv-vrow small{color:#55708A}
+.nv-logo{color:#5C7893}
+.nv-msl,.nv-mocktitle,.nv-crumb,.nv-vrow small{color:#55708A}
 .nv-crumb a{color:#1C6DB0}
 .nv-chip.ico-bolt{color:#8A6508}
 .nv-chip.ico-cloud{color:#1C6DB0}
@@ -481,23 +310,22 @@ p.nv-msl,.nv-msl,.nv-mocktitle,p.nv-mocktitle,.nv-crumb,.nv-vrow small{color:#55
 .wp-block-button.is-style-fill .wp-block-button__link{background:linear-gradient(135deg,#1C6DB0 0%,#2B7FC4 100%)}
 .wp-block-navigation .wp-block-navigation-item__content{color:#0F3557}
 
-/* footer-link-guard: keep footer links light on the dark footer */
-.wp-site-blocks > footer a,.wp-site-blocks > footer p a{color:rgba(255,255,255,.78)}
-.wp-site-blocks > footer a:hover{color:#fff}
-
-/* Keyboard focus visibility */
+/* Focus visibility for keyboard users */
 :where(.wp-site-blocks) a:focus-visible,.wp-block-button__link:focus-visible,summary:focus-visible,.wp-block-navigation-item__content:focus-visible{outline:3px solid #1C6DB0;outline-offset:3px;border-radius:6px}
 
-/* Rhythm + measure */
+/* Rhythm: consistent section padding + heading measure */
 .wp-block-post-content > section{padding-left:1.25rem;padding-right:1.25rem}
 h2.wp-block-heading{max-width:22ch;margin-left:auto;margin-right:auto}
 .wp-block-column h2.wp-block-heading,.nv-dhero h1{max-width:none}
+.nv-tile h3,.nv-tstep h3,.nv-step h3{max-width:none}
 
-/* Card + FAQ polish */
+/* Card polish */
 .nv-card,.nv-tcard{border-color:#E3EDF6}
 .nv-tcard{transition:transform .25s,box-shadow .25s,border-color .25s}
 .nv-tcard:hover{transform:translateY(-4px);box-shadow:0 26px 50px -26px rgba(18,60,99,.4);border-color:#BFDCF2}
 .nv-quote-featured{border-left-width:5px}
+
+/* FAQ polish */
 .wp-block-details{transition:border-color .2s,box-shadow .2s}
 .wp-block-details:hover{border-color:#BFDCF2!important;box-shadow:0 10px 26px -16px rgba(18,60,99,.35)}
 .wp-block-details[open]{border-color:#8FC4E8!important;box-shadow:0 14px 34px -20px rgba(18,60,99,.4)}
@@ -508,18 +336,45 @@ h2.wp-block-heading{max-width:22ch;margin-left:auto;margin-right:auto}
 
 @media(prefers-reduced-motion:reduce){.nv-tcard:hover{transform:none}.wp-block-details summary::before{transition:none}}
 
+
+/* QA 3.1.1 — win specificity battles against earlier element-qualified rules */
+p.nv-msl{color:#55708A}
+p.nv-logo{color:#5C7893}
+p.nv-mocktitle,.nv-mocktitle{color:#55708A}
+
+
+/* footer-link-guard: keep footer links light on the dark footer */
+.wp-site-blocks > footer a,.wp-site-blocks > footer p a{color:rgba(255,255,255,.78)}
+.wp-site-blocks > footer a:hover{color:#fff}
+
+
 /* ==========================================================================
    Spacing rhythm fix (3.2.0)
    Earlier margin:0 resets removed all internal spacing inside the dark
-   security cards. Restore an explicit vertical rhythm.
+   security cards. Restore an explicit vertical rhythm and give the band
+   the same generous padding as its neighbouring sections.
    ========================================================================== */
 .nv-sec-card2{padding:1.85rem 1.75rem}
 .nv-sec-card2 .nv-sec-icon{margin:0 0 1.05rem}
 .nv-sec-card2 h3{margin:0 0 .55rem;font-size:1.06rem;line-height:1.35}
 .nv-sec-card2 p{margin:0;font-size:.94rem;line-height:1.62}
+
+/* the security band: match the section rhythm used elsewhere */
+section:has(> .wp-block-columns .nv-sec-card2),
+section:has(.nv-sec-card2){padding-top:5rem;padding-bottom:5rem}
+section:has(.nv-sec-card2) > .wp-block-group{margin-bottom:3rem}
+section:has(.nv-sec-card2) .wp-block-columns{gap:1.6rem}
+
+/* same treatment for the light service cards + bento tiles */
 .nv-card .nv-icon{margin-bottom:1rem}
 .nv-tile .nv-icon{margin-bottom:.2rem}
 .nv-tile h3{margin:1rem 0 .5rem}
+
+@media(max-width:781px){
+ section:has(.nv-sec-card2){padding-top:3.25rem;padding-bottom:3.25rem}
+ section:has(.nv-sec-card2) > .wp-block-group{margin-bottom:2rem}
+}
+
 
 /* 3.2.1 — inline block padding wins over classes, so these need !important.
    Normalises the vertical rhythm of every full-width band on the site. */
@@ -537,6 +392,7 @@ section:has(.nv-sec-card2) .wp-block-columns{gap:1.6rem}
  .wp-block-post-content > section{padding-top:3.5rem!important;padding-bottom:3.5rem!important}
  section:has(.nv-sec-card2) > .wp-block-group,section:has(.nv-card) > .wp-block-group{margin-bottom:2rem!important}
 }
+
 
 /* ==========================================================================
    Product UI panel (3.3.0) — realistic app mock for the "Why NovaVolt" band
@@ -573,6 +429,7 @@ section:has(.nv-sec-card2) .wp-block-columns{gap:1.6rem}
 @media(prefers-reduced-motion:reduce){.nv-wave i,.nv-applive::before{animation:none}.nv-wave i{height:60%}}
 @media(max-width:781px){.nv-app{padding:1rem;border-radius:20px}}
 
+
 /* ==========================================================================
    Integrations constellation (3.4.0)
    NovaVolt sits at the centre; connected tools orbit around it.
@@ -603,11 +460,12 @@ section:has(.nv-sec-card2) .wp-block-columns{gap:1.6rem}
 }
 @media(prefers-reduced-motion:reduce){.nv-orb .hub::after{animation:none}.nv-orb .node:hover{transform:translate(-50%,-50%)}}
 
-/* 3.4.1/3.4.3 — clear the "+ more" pill from the bottom orbit node.
-   WP block margin resets zero a plain margin here, hence !important. */
+
+/* 3.4.1 — clear the "+ more" pill from the bottom orbit node */
 .nv-orb,.wp-block-html:has(.nv-orb){margin-bottom:6rem!important}
 .nv-orb .more{bottom:-4.1rem}
-@media(max-width:900px){.nv-orb,.wp-block-html:has(.nv-orb){margin-bottom:0!important}.nv-orb .more{bottom:auto}}
+@media(max-width:900px){.nv-orb{margin-bottom:0}.nv-orb .more{bottom:auto}}
+
 
 /* ==========================================================================
    CTA band (3.5.0) — depth + readable buttons
@@ -620,21 +478,27 @@ section:has(.nv-sec-card2) .wp-block-columns{gap:1.6rem}
 .nv-cta > *{position:relative;z-index:2}
 .nv-cta h2{color:#fff!important;letter-spacing:-.03em}
 .nv-cta p{color:rgba(255,255,255,.86)!important}
+
+/* primary: solid white pill, navy label (12.9:1) */
 .nv-cta .wp-block-button.is-style-fill .wp-block-button__link{background:#fff!important;background-image:none!important;color:#0B2B4C!important;box-shadow:0 16px 34px -14px rgba(0,0,0,.55)}
 .nv-cta .wp-block-button.is-style-fill .wp-block-button__link:hover{background:#EAF4FB!important;transform:translateY(-2px);box-shadow:0 22px 44px -16px rgba(0,0,0,.6)}
+/* secondary: outlined white, inverts on hover */
 .nv-cta .wp-block-button.is-style-outline .wp-block-button__link{border-color:rgba(255,255,255,.55)!important;color:#fff!important;background:transparent!important}
 .nv-cta .wp-block-button.is-style-outline .wp-block-button__link:hover{background:#fff!important;color:#0B2B4C!important;border-color:#fff!important}
 .nv-cta .wp-block-buttons{gap:.9rem}
 @media(max-width:781px){.nv-cta{border-radius:22px}}
 
+
 /* 3.5.1 — bento overlap fix.
-   height:100% on a grid item creates a circular sizing dependency: the row is
-   sized from content, then the item resolves 100% against it and can end up
-   taller, overflowing into the row below. Grid items stretch by default. */
+   height:100% on a grid item creates a circular sizing dependency: the row
+   is sized from content, then the item resolves 100% against it and can end
+   up taller, overflowing into the row below. Grid items stretch by default,
+   so align-self does the job safely. */
 .nv-bento > .nv-tile{height:auto!important;align-self:stretch;min-height:0}
 .nv-bento{align-items:stretch;grid-auto-rows:minmax(0,auto)}
 .nv-tile{display:flex;flex-direction:column}
 .nv-tile p{margin-top:0}
+
 
 /* ==========================================================================
    Navigation (3.6.0) — refined bar + Services dropdown
@@ -643,14 +507,12 @@ section:has(.nv-sec-card2) .wp-block-columns{gap:1.6rem}
 .wp-site-blocks > header.wp-block-template-part.nv-stuck{box-shadow:0 10px 30px -18px rgba(12,44,74,.45);background:rgba(255,255,255,.92)}
 .wp-block-navigation{align-items:center}
 .wp-block-navigation .wp-block-navigation-item__content{position:relative;font-weight:500;padding:.45rem 0;transition:color .2s}
-/* animated underline on top-level items */
 .wp-block-navigation > ul > li > .wp-block-navigation-item__content::after,
 .wp-block-navigation > ul > li > .wp-block-navigation-submenu > .wp-block-navigation-item__content::after{content:"";position:absolute;left:0;right:0;bottom:0;height:2px;border-radius:2px;background:linear-gradient(90deg,#1C6DB0,#86CDEA);transform:scaleX(0);transform-origin:left;transition:transform .28s cubic-bezier(.4,0,.2,1)}
 .wp-block-navigation > ul > li:hover > .wp-block-navigation-item__content::after,
 .wp-block-navigation > ul > li:focus-within > .wp-block-navigation-item__content::after,
 .wp-block-navigation > ul > li.current-menu-item > .wp-block-navigation-item__content::after{transform:scaleX(1)}
 .wp-block-navigation .current-menu-item > .wp-block-navigation-item__content{color:#1C6DB0!important;font-weight:600}
-/* submenu panel */
 .wp-block-navigation .wp-block-navigation__submenu-container{min-width:290px;padding:.5rem;border:1px solid #E3EDF6!important;border-radius:16px!important;background:#fff!important;box-shadow:0 30px 60px -28px rgba(12,44,74,.55)!important;margin-top:.55rem}
 .wp-block-navigation .wp-block-navigation__submenu-container::before{content:"";position:absolute;top:-7px;left:26px;width:12px;height:12px;background:#fff;border-left:1px solid #E3EDF6;border-top:1px solid #E3EDF6;transform:rotate(45deg);border-radius:2px}
 .wp-block-navigation .wp-block-navigation__submenu-container li{width:100%}
@@ -668,6 +530,7 @@ section:has(.nv-sec-card2) .wp-block-columns{gap:1.6rem}
 }
 @media(prefers-reduced-motion:reduce){.wp-block-navigation .wp-block-navigation-item__content::after{transition:none}}
 
+
 /* ==========================================================================
    3.6.1 — MOBILE MENU FIX (reported by client)
    backdrop-filter on the sticky header establishes a containing block, so the
@@ -681,11 +544,13 @@ html.has-modal-open .wp-site-blocks > header.wp-block-template-part,
  backdrop-filter:none!important;-webkit-backdrop-filter:none!important;
  background:transparent!important;box-shadow:none!important;border-bottom-color:transparent!important;
 }
+/* make sure the overlay itself always fills the screen and scrolls */
 .wp-block-navigation__responsive-container.is-menu-open{position:fixed!important;inset:0!important;height:100dvh!important;max-height:100dvh;overflow-y:auto;z-index:9999;padding:1.25rem}
 .wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__responsive-container-content{width:100%;align-items:flex-start;gap:.35rem;padding-top:3rem}
 .wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation-item__content{font-size:1.06rem;padding:.6rem 0!important}
 .wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__submenu-container .wp-block-navigation-item__content{font-size:.95rem;opacity:.85}
 .wp-block-navigation__responsive-container-close{z-index:10000}
+
 
 /* 3.6.2 — mobile overlay polish: left-align everything, readable "View all" */
 .wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__container,
@@ -694,6 +559,8 @@ html.has-modal-open .wp-site-blocks > header.wp-block-template-part,
 .wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation-item__content{justify-content:flex-start!important;text-align:left!important}
 .wp-block-navigation__responsive-container.is-menu-open .nv-viewall .wp-block-navigation-item__content{color:#86CDEA!important}
 .wp-block-navigation__responsive-container.is-menu-open .nv-viewall{border-top-color:rgba(255,255,255,.18)!important}
+.wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__submenu-container{padding-left:.9rem!important;border-left:1px solid rgba(255,255,255,.16)!important;margin-left:.15rem;border-radius:0!important}
+
 
 /* 3.6.3 — the nav block carries .items-justified-right for the desktop bar;
    that must not apply inside the mobile overlay. */
@@ -702,17 +569,21 @@ html.has-modal-open .wp-site-blocks > header.wp-block-template-part,
 .wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__container{justify-content:flex-start!important;align-items:flex-start!important}
 .wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__responsive-container-content{justify-content:flex-start!important;align-items:flex-start!important}
 
+
 /* 3.6.4 — each overlay <li> is a column flex with align-items:flex-end,
    which is what actually right-aligned the mobile links. */
 .wp-block-navigation__responsive-container.is-menu-open li,
 .wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation-item,
 .wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation-submenu{align-items:flex-start!important}
 
+
 /* ==========================================================================
    Mobile navigation overlay (3.7.0) — full redesign
    ========================================================================== */
 .nv-navcta{display:none}
 @media(max-width:781px){
+
+/* panel */
 .wp-block-navigation__responsive-container.is-menu-open{
  background:linear-gradient(165deg,#071A2E 0%,#0C2C4A 52%,#12406B 100%)!important;
  padding:0!important;overflow-y:auto}
@@ -721,11 +592,15 @@ html.has-modal-open .wp-site-blocks > header.wp-block-template-part,
  background:radial-gradient(circle,rgba(79,163,222,.32),transparent 68%);pointer-events:none}
 .wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__responsive-container-content{
  position:relative;z-index:2;padding:5.5rem 1.5rem 2.5rem!important;gap:0!important;width:100%}
+
+/* close button */
 .wp-block-navigation__responsive-container-close{
  top:1.35rem!important;right:1.35rem!important;width:42px;height:42px;border-radius:50%;
  background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);color:#fff!important;
  display:flex;align-items:center;justify-content:center;transition:background .2s}
 .wp-block-navigation__responsive-container-close:hover{background:rgba(255,255,255,.16)}
+
+/* top-level rows */
 .wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__container > li{
  width:100%;border-bottom:1px solid rgba(255,255,255,.09);padding:.1rem 0}
 .wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__container > li:last-child{border-bottom:0}
@@ -736,6 +611,8 @@ html.has-modal-open .wp-site-blocks > header.wp-block-template-part,
 .wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__container > li > .wp-block-navigation-item__content:hover{
  background:rgba(255,255,255,.09)!important;padding-left:.9rem!important;transform:none!important}
 .wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation-item__content::after{display:none!important}
+
+/* services group card */
 .wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__submenu-container{
  background:rgba(255,255,255,.055)!important;border:1px solid rgba(255,255,255,.10)!important;
  border-radius:16px!important;padding:.45rem!important;margin:.15rem 0 .9rem!important;
@@ -748,6 +625,8 @@ html.has-modal-open .wp-site-blocks > header.wp-block-template-part,
 .wp-block-navigation__responsive-container.is-menu-open .nv-viewall{border-top:1px solid rgba(255,255,255,.12)!important;margin-top:.4rem!important;padding-top:.5rem!important}
 .wp-block-navigation__responsive-container.is-menu-open .nv-viewall .wp-block-navigation-item__content{
  color:#8FD3F0!important;font-weight:700!important;font-size:.92rem!important}
+
+/* mobile CTA pill */
 .nv-navcta{display:block!important;border-bottom:0!important;margin-top:1.4rem}
 .wp-block-navigation__responsive-container.is-menu-open .nv-navcta .wp-block-navigation-item__content{
  display:flex!important;align-items:center;justify-content:center!important;text-align:center;
@@ -755,8 +634,11 @@ html.has-modal-open .wp-site-blocks > header.wp-block-template-part,
  border-radius:999px;padding:.95rem 1.4rem!important;box-shadow:0 14px 30px -12px rgba(28,109,176,.7)}
 .wp-block-navigation__responsive-container.is-menu-open .nv-navcta .wp-block-navigation-item__content:hover{
  background:linear-gradient(135deg,#2B7FC4,#5FB0E8)!important;padding-left:1.4rem!important}
+
+/* focus ring on dark */
 .wp-block-navigation__responsive-container.is-menu-open a:focus-visible{outline:2px solid #86CDEA!important;outline-offset:2px;border-radius:10px}
 }
+
 
 /* 3.7.1 — mobile overlay spacing corrections
    Links had width:100% with content-box sizing, so padding pushed them
@@ -765,12 +647,15 @@ html.has-modal-open .wp-site-blocks > header.wp-block-template-part,
 .wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation-item__content{box-sizing:border-box!important;max-width:100%}
 .wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__submenu-container{padding:.55rem!important;overflow:hidden}
 .wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__submenu-container li{width:100%}
+/* focus ring hugs the row instead of boxing it */
 .wp-block-navigation__responsive-container.is-menu-open a:focus-visible{outline:2px solid #86CDEA!important;outline-offset:-2px!important;border-radius:12px}
+/* clearer rhythm between groups */
 .wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__container > li > .wp-block-navigation-item__content,
 .wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__container > li > .wp-block-navigation-submenu > .wp-block-navigation-item__content{padding:1rem .6rem!important}
 .wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__submenu-container{margin:.1rem 0 1.1rem!important}
 .wp-block-navigation__responsive-container.is-menu-open .nv-navcta{margin-top:1.6rem!important;padding-top:0!important}
 }
+
 
 /* 3.8.0 — CLS + font stack. The marquee is assembled by JS after load, so its
    height is reserved up front; the metric-matched fallback prevents reflow. */
@@ -779,6 +664,7 @@ body{font-family:'Inter','Inter Fallback',-apple-system,BlinkMacSystemFont,'Sego
 p.nv-logo{line-height:34px}
 @media(max-width:781px){.nv-marquee,.nv-mscroll{min-height:30px}p.nv-logo{line-height:30px}}
 
+
 /* 3.8.1 — CLS root cause: the trust-bar logos wrap onto ~4 lines before
    reveal.js collapses them into a single scrolling marquee (measured 264px ->
    30px on a 390px screen = a 234px late shift). Lock the row to one line from
@@ -786,6 +672,7 @@ p.nv-logo{line-height:34px}
 .wp-block-group:has(> p.nv-logo){flex-wrap:nowrap!important;overflow:hidden;min-height:34px;contain:layout}
 @media(max-width:781px){.wp-block-group:has(> p.nv-logo){min-height:30px}}
 .nv-marquee,.nv-mscroll{contain:layout}
+
 
 /* ==========================================================================
    3.9.0 — dropdown fixes
@@ -817,3 +704,68 @@ p.nv-logo{line-height:34px}
 .wp-block-navigation > ul > li.has-child{padding-bottom:.2rem}
 /* one line per service */
 .wp-block-navigation .wp-block-navigation__submenu-container .wp-block-navigation-item__content{white-space:nowrap}
+
+
+/* ==========================================================================
+   4.0.0 — Milestone 5 client corrections
+   Header click-to-call, pricing page, and demo-content labelling.
+   ========================================================================== */
+
+/* Header click-to-call. Hidden below 1100px — the nav bar runs out of room
+   before the mobile breakpoint, and the overlay carries its own call CTA. */
+.nv-navphone{margin:0 0 0 1.35rem;font-size:.98rem;font-weight:700;white-space:nowrap}
+.nv-navphone a{display:inline-flex;align-items:center;gap:.42rem;color:#0F3557;text-decoration:none;transition:color .2s}
+.nv-navphone a::before{content:"";width:15px;height:15px;flex:none;background:currentColor;
+ -webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M6.5 3h3l1.6 4-2.1 1.5a12.5 12.5 0 0 0 5.5 5.5L16 11.9l4 1.6v3a2 2 0 0 1-2.2 2A16.6 16.6 0 0 1 3.5 5.2 2 2 0 0 1 5.5 3z' fill='black'/%3E%3C/svg%3E") center/contain no-repeat;
+ mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M6.5 3h3l1.6 4-2.1 1.5a12.5 12.5 0 0 0 5.5 5.5L16 11.9l4 1.6v3a2 2 0 0 1-2.2 2A16.6 16.6 0 0 1 3.5 5.2 2 2 0 0 1 5.5 3z' fill='black'/%3E%3C/svg%3E") center/contain no-repeat}
+.nv-navphone a:hover{color:#1C6DB0}
+@media(max-width:1100px){.nv-navphone{display:none}}
+
+/* Pricing ---------------------------------------------------------------- */
+.nv-price-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(275px,1fr));gap:1.5rem;align-items:stretch}
+.nv-plan{position:relative;display:flex;flex-direction:column;background:#fff;border:1px solid #E3EDF6;border-radius:20px;padding:2rem 1.85rem;
+ box-shadow:0 1px 2px rgba(11,18,32,.05);transition:transform .28s cubic-bezier(.4,0,.2,1),box-shadow .28s,border-color .28s}
+.nv-plan:hover{transform:translateY(-5px);box-shadow:0 30px 58px -28px rgba(18,60,99,.42);border-color:#BFDCF2}
+.nv-plan.featured{border-color:#2B7FC4;box-shadow:0 26px 54px -26px rgba(28,109,176,.45)}
+.nv-plan .tag{position:absolute;top:-.78rem;left:50%;transform:translateX(-50%);background:linear-gradient(135deg,#1C6DB0,#4FA3DE);color:#fff;
+ font-size:.68rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;padding:.34rem .95rem;border-radius:999px;white-space:nowrap}
+.nv-plan h3{font-size:1.15rem;margin:0 0 .3rem;letter-spacing:-.01em}
+.nv-plan .blurb{color:#55708A;font-size:.92rem;line-height:1.55;margin:0 0 1.15rem;min-height:2.9em}
+.nv-plan .amt{display:flex;align-items:baseline;gap:.28rem;margin-bottom:.15rem}
+.nv-plan .amt b{font-size:2.5rem;line-height:1;letter-spacing:-.04em;
+ background:linear-gradient(120deg,#1C6DB0,#4FA3DE);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.nv-plan .amt span{font-size:.85rem;color:#55708A;font-weight:600}
+.nv-plan .annual{font-size:.8rem;color:#12633B;background:#E8F7EE;border:1px solid #BFE8CE;border-radius:999px;
+ padding:.24rem .6rem;display:inline-block;margin-bottom:1.15rem}
+.nv-plan ul{list-style:none;padding:0;margin:0 0 1.5rem;display:flex;flex-direction:column;gap:.62rem}
+.nv-plan li{display:flex;gap:.58rem;align-items:flex-start;color:#3D5A76;font-size:.94rem;line-height:1.5}
+.nv-plan li::before{content:"";flex:none;width:18px;height:18px;margin-top:.14rem;border-radius:50%;
+ background:rgba(28,109,176,.12) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%231C6DB0' stroke-width='2.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6,12.5 10,16.5 18,7.5'/%3E%3C/svg%3E") center/12px no-repeat}
+.nv-plan li.inherit{font-weight:600;color:#123C63}
+.nv-plan li.inherit::before{background-color:rgba(28,109,176,.2)}
+.nv-plan .cta{margin-top:auto}
+.nv-plan .cta a{display:block;text-align:center;border-radius:999px;padding:.82rem 1.2rem;font-weight:700;font-size:.98rem;text-decoration:none;
+ border:1.5px solid #BFDCF2;color:#1C6DB0;background:#fff;transition:background .2s,color .2s,border-color .2s,transform .2s}
+.nv-plan .cta a:hover{background:#F1F7FC;border-color:#2B7FC4;transform:translateY(-2px)}
+.nv-plan.featured .cta a{background:linear-gradient(135deg,#1C6DB0,#4FA3DE);border-color:transparent;color:#fff;box-shadow:0 14px 30px -12px rgba(28,109,176,.65)}
+.nv-plan.featured .cta a:hover{background:linear-gradient(135deg,#2B7FC4,#5FB0E8)}
+
+.nv-addon-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.1rem}
+.nv-addon{background:#fff;border:1px solid #E3EDF6;border-radius:16px;padding:1.4rem 1.5rem;transition:border-color .25s,box-shadow .25s,transform .25s}
+.nv-addon:hover{border-color:#BFDCF2;box-shadow:0 20px 38px -20px rgba(18,60,99,.38);transform:translateY(-3px)}
+.nv-addon b{display:block;font-size:1rem;color:#123C63;margin-bottom:.28rem}
+.nv-addon .p{font-size:1.28rem;font-weight:800;letter-spacing:-.03em;color:#1C6DB0;margin-bottom:.3rem}
+.nv-addon small{display:block;font-size:.86rem;color:#55708A;line-height:1.5}
+@media(prefers-reduced-motion:reduce){.nv-plan:hover,.nv-addon:hover,.nv-plan .cta a:hover{transform:none}}
+@media(max-width:781px){.nv-plan{padding:1.7rem 1.4rem}.nv-plan .blurb{min-height:0}}
+
+
+/* Baza AI chatbot container (see novavolt_chatbot_embed in functions.php).
+   The mobile nav overlay sits at z-index 9999/10000, and vendor chat widgets
+   habitually ship z-index:2147483647 — which would cover the menu and its
+   close button. Keep the widget underneath, and hide it while the menu is
+   open. Add the vendor's own selector to these lists when the widget lands. */
+#nv-chatbot{position:relative;z-index:9000}
+#nv-chatbot > *{z-index:9000!important}
+html.has-modal-open #nv-chatbot{display:none!important}
+@media print{#nv-chatbot{display:none!important}}
