@@ -7,7 +7,7 @@ Description: Custom enterprise block theme for NovaVolt Systems — modern busin
 Requires at least: 6.4
 Tested up to: 6.6
 Requires PHP: 7.4
-Version: 4.0.1
+Version: 4.0.4
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: novavolt
@@ -787,3 +787,74 @@ html.has-modal-open #nv-chatbot{display:none!important}
  .nv-itile{padding:.85rem 1rem}
  .nv-itile span.lbl,.nv-itile.more{font-size:.9rem}
 }
+
+
+/* ==========================================================================
+   4.0.2 — WCAG AA contrast corrections found in the Milestone 5 QA pass.
+   Brand #2B7FC4 measures 4.25:1 on white, which passes only for large text.
+   The design system already settled on #1C6DB0 (5.44:1) for small on-light
+   text; these three spots had been missed. Values verified by calculation,
+   not by eye.
+   ========================================================================== */
+
+/* WordPress core's skip link inherits the brand link colour. Visible only on
+   keyboard focus, which is exactly the user who needs it legible. 4.25 -> 5.44 */
+.skip-link.screen-reader-text:focus,
+.skip-link:focus{color:#1C6DB0!important;background:#fff!important;box-shadow:0 2px 12px rgba(12,44,74,.28)}
+
+/* "CRM integrations available" tile: 20px/700 on a white tile. 4.25 -> 5.44 */
+.nv-itile.more{color:#1C6DB0}
+
+/* Hero eyebrow sits on the light gradient's darker region (~#CAE3F5), where
+   #1C6DB0 drops to 4.11. Raising the pill's own opacity lifts the effective
+   background back toward white rather than darkening the brand blue. */
+.nv-eyebrow2{background:rgba(255,255,255,.92);border-color:rgba(28,109,176,.38)}
+
+/* Hero supporting text and the demo caption: #55708A measures 3.89 against the
+   hero gradient's darkest area. #44607C gives 4.93 there and 6.54 on white.
+   Inline styles on these blocks, hence the specificity. */
+.nv-hero2 p[style*="55708A"],
+p.nv-democaption[style*="55708A"]{color:#44607C!important}
+
+/* Glass-panel stat labels on the dark service heroes: .55 alpha measures 4.25 */
+.nv-gkv span{color:rgba(255,255,255,.78)}
+
+
+/* ==========================================================================
+   4.0.3 — white-on-blue contrast, found in the Milestone 5 QA pass.
+   Several gradients ran from a passing blue into a light one while carrying
+   white text, so the lighter end of each element fell below WCAG AA.
+   Measured against white:  #2B7FC4 = 4.25   #4FA3DE = 2.75   #86CDEA = 1.75
+   All three are below the 4.5 needed for text under 24px / under 700 weight.
+   Gradient ends are pulled to #2170B3 (5.21), which is a barely perceptible
+   change in hue but takes every one of these over the line.
+   ========================================================================== */
+
+/* Primary CTA — the most important one: "Talk to Sales" on every page */
+.wp-block-button.is-style-fill .wp-block-button__link{
+ background:linear-gradient(135deg,#1C6DB0 0%,#2170B3 100%)}
+
+/* Contact Form 7 submit button: was #2B7FC4 -> #4FA3DE, bottoming out at 2.75 */
+.wpcf7 input[type=submit]{background:linear-gradient(135deg,#1C6DB0,#2170B3)}
+
+/* Mobile navigation call-to-action */
+.wp-block-navigation__responsive-container.is-menu-open .nv-navcta .wp-block-navigation-item__content{
+ background:linear-gradient(135deg,#1C6DB0,#2170B3)}
+.wp-block-navigation__responsive-container.is-menu-open .nv-navcta .wp-block-navigation-item__content:hover{
+ background:linear-gradient(135deg,#155A94,#1C6DB0)!important}
+
+/* Numbered step markers on the service pages */
+.nv-stepnum,.nv-tnum{background:linear-gradient(135deg,#1C6DB0,#2170B3)}
+
+/* Monograms and avatars that carry white initials */
+.nv-avatar{background:linear-gradient(135deg,#1C6DB0,#2170B3)}
+.nv-callrow .av{background:linear-gradient(135deg,#155A94,#1C6DB0)}
+.nv-itile .nv-mono{background:linear-gradient(135deg,#1C6DB0,#2170B3)!important}
+
+/* Icon tile on card hover also flips to white-on-blue */
+.nv-card:hover .nv-icon{background:linear-gradient(135deg,#1C6DB0,#2170B3)}
+
+/* 4.0.3b — hero eyebrow. Real-world it measures 4.93 (the pill's own 92% white
+   sits over the gradient), but against the raw gradient stop it reads 4.11.
+   #155A94 clears 4.5 either way, so the result is unambiguous. */
+.nv-eyebrow2{color:#155A94}
