@@ -1,9 +1,9 @@
 # Milestone 5 — Client Corrections & Final QA
 
 **Site:** NovaVolt Systems (staging)
-**Theme version:** 4.0.0
+**Theme version:** 4.0.4
 **Prepared by:** Jawad
-**Date:** August 2026
+**Date:** 18 August 2026
 
 This responds to each of the 17 points in your Milestone 4 feedback, then reports the final QA pass you asked for. Everything marked **Done** has been applied to the staging site and verified by measurement, not by eye.
 
@@ -205,7 +205,7 @@ One thing to be aware of: Hostinger's own "Ask AI" assistant plugin is active on
 | **Desktop** | Verified at 1024px, 1280px and 2560px |
 | **Mobile** | Verified at 390px, 768px and 1024px. No horizontal overflow on any page tested |
 | **Accessibility** | One `h1` per page. Zero skipped heading levels (four pages fixed during this pass). All images have alt text. No empty links, no unnamed buttons, all form inputs labelled. Skip link, `lang` attribute and header/main/footer/nav landmarks all correct. **Colour contrast re-audited by calculation across all 16 pages — see below — now 0 failures** |
-| **Performance** | TTFB 314ms, DOM ready 487ms, fully loaded 539ms, **Cumulative Layout Shift 0**. Slightly faster than the Milestone 4 baseline despite the added pages |
+| **Performance** | TTFB ~400ms, DOM ready ~540ms, fully loaded ~575ms, **Cumulative Layout Shift 0**. In line with the Milestone 4 baseline despite the added pages; figures vary a little run to run, CLS 0 is consistent |
 | **Security** | Full re-verification passed — see item 14 |
 | **Browser compatibility** | **Chrome only.** Unchanged from Milestone 4: the layout uses the modern CSS `:has()` selector, supported in current Chrome, Safari and Firefox, but a visual check in Safari and Firefox before launch is still worth doing |
 
