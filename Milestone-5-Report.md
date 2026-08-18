@@ -190,6 +190,10 @@ One thing to be aware of: Hostinger's own "Ask AI" assistant plugin is active on
 
 ---
 
+> **Please open the site with a hard refresh** (Ctrl+Shift+R on Windows, Cmd+Shift+R on Mac), or use this link: **https://lightyellow-kingfisher-780485.hostingersite.com/?v=milestone5**
+>
+> The site was previously sending a seven-day browser-cache instruction on its pages. That is now fixed, but any browser that visited before the fix may still be holding the old page and would show you the previous version of the site rather than the corrections. A hard refresh or the link above bypasses it. New visitors are unaffected.
+
 ## Final QA results
 
 | Area | Result |
@@ -200,12 +204,28 @@ One thing to be aware of: Hostinger's own "Ask AI" assistant plugin is active on
 | **Content accuracy** | Full-text sweep of all 16 pages plus all 9 theme patterns for every flagged claim, invented name, and removed integration. Zero matches |
 | **Desktop** | Verified at 1024px, 1280px and 2560px |
 | **Mobile** | Verified at 390px, 768px and 1024px. No horizontal overflow on any page tested |
-| **Accessibility** | One `h1` per page. Zero skipped heading levels (four pages were fixed during this pass). All images have alt text. No empty links, no unnamed buttons, all form inputs labelled. Skip link, `lang` attribute and header/main/footer/nav landmarks all correct |
+| **Accessibility** | One `h1` per page. Zero skipped heading levels (four pages fixed during this pass). All images have alt text. No empty links, no unnamed buttons, all form inputs labelled. Skip link, `lang` attribute and header/main/footer/nav landmarks all correct. **Colour contrast re-audited by calculation across all 16 pages — see below — now 0 failures** |
 | **Performance** | TTFB 314ms, DOM ready 487ms, fully loaded 539ms, **Cumulative Layout Shift 0**. Slightly faster than the Milestone 4 baseline despite the added pages |
 | **Security** | Full re-verification passed — see item 14 |
 | **Browser compatibility** | **Chrome only.** Unchanged from Milestone 4: the layout uses the modern CSS `:has()` selector, supported in current Chrome, Safari and Firefox, but a visual check in Safari and Firefox before launch is still worth doing |
 
 ---
+
+### Colour contrast — re-audited and fixed
+
+Milestone 4 reported contrast as resolved. On this pass I re-checked it properly, calculating the ratio for every piece of text on all 16 pages rather than judging by eye, and found several places still below the WCAG AA minimum. Measured against white:
+
+| Colour | Ratio | Verdict |
+|---|---|---|
+| `#2B7FC4` (brand blue) | 4.25 | Fails for normal text (needs 4.5) |
+| `#4FA3DE` | 2.75 | Fails |
+| `#86CDEA` | 1.75 | Fails |
+
+The most significant were the **"Talk to Sales" button on every page** and the **Contact form's submit button**. Both are white text on a gradient that ran into a light blue, so the lighter half of each button was below the minimum — the form's submit button was the worst at 2.75. Also affected: the "CRM integrations available" tile, the keyboard skip link, the hero supporting text and demo caption, and the stat labels on the dark service page headers.
+
+All are corrected. Gradients now end at `#2170B3` (5.21) instead of the lighter blues — a barely perceptible change in hue that takes every instance over the line. Nothing moved and no wording changed.
+
+**Result: 0 contrast failures across all 16 pages**, confirmed by re-running the audit.
 
 ## Outstanding — what I need from you
 
