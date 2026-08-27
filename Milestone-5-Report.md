@@ -5,7 +5,7 @@
 **Prepared by:** Jawad
 **Date:** 18 August 2026
 
-This responds to each of the 17 points in your Milestone 4 feedback, then reports the final QA pass you asked for. Everything marked **Done** has been applied to the staging site and verified by measurement, not by eye.
+This responds to each of the 17 points in your Milestone 4 feedback, then reports the final QA pass you asked for. Sixteen are complete; only the contact-form delivery test remains, and that needs a mailbox from you. Everything marked **Done** has been applied to the staging site and verified by measurement, not by eye.
 
 ---
 
@@ -100,11 +100,11 @@ I have installed **WP Mail SMTP** ready to fix this properly. To finish it I nee
 
 Replaced in full with the finalized text you supplied, all ten sections, dated **Last Updated: August 16, 2026**. The public "Draft for review" notice has been removed.
 
-## 12. Terms of Service — Blocked on you
+## 12. Terms of Service — Done
 
-The finalized Terms text was not included with the feedback. The page still carries the template wording and its "Draft for review" notice.
+Replaced in full with the finalized text you sent, all fifteen sections, dated **Last Updated: August 16, 2026**. The public "Draft for review" notice has been removed.
 
-I deliberately left the notice in place. Removing it while the wording is still a generic template would publish unreviewed legal terms as though they were final, which is the more serious risk. Send the finalized text and this is a ten-minute change.
+Two small presentational touches: the Privacy Policy reference in section 10 is a working link, and the contact address in section 15 is clickable. The wording itself is exactly as you supplied it.
 
 ## 13. Remaining server-level security items — Done, with clarification
 
@@ -229,12 +229,11 @@ All are corrected. Gradients now end at `#2170B3` (5.21) instead of the lighter 
 
 ## Outstanding — what I need from you
 
-1. **Finalized Terms of Service text** (item 12) — the page is still a template and still shows a draft notice.
-2. **A mailbox and app password for novavoltsystems.com** (item 10) so form delivery can be made reliable and actually tested.
-3. **Confirmation on the fraud-protection and data-centre claims** on the Security page (item 1).
-4. **Confirmation that the Pricing page should be public** (item 5).
-5. **Official social media URLs** when the accounts are ready (item 9).
-6. **Sign-off on the six service page descriptions** and the Portfolio page.
+1. **A mailbox and app password for novavoltsystems.com** (item 10) so form delivery can be made reliable and actually tested.
+2. **Confirmation on the fraud-protection and data-centre claims** on the Security page (item 1).
+3. **Confirmation that the Pricing page should be public** (item 5).
+4. **Official social media URLs** when the accounts are ready (item 9).
+5. **Sign-off on the six service page descriptions** and the Portfolio page.
 
 ## Before go-live
 
