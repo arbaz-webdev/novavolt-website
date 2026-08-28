@@ -34,8 +34,8 @@
 <!-- wp:group {"className":"nv-card","style":{"spacing":{"padding":"1.85rem","blockGap":"0.7rem"}},"layout":{"type":"constrained"}} -->
 <div class="wp-block-group nv-card" style="padding:1.85rem">
 <!-- wp:html --><span class="nv-icon"><svg class="nv-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="5" y="5" width="14" height="14" rx="2"/><path d="M9 12h6"/></svg></span><!-- /wp:html -->
-<!-- wp:heading {"level":3,"fontSize":"large"} --><h3 class="wp-block-heading has-large-font-size">Cancel anytime</h3><!-- /wp:heading -->
-<!-- wp:paragraph {"style":{"color":{"text":"#55708A"}}} --><p style="color:#55708A">Month-to-month plans with no long-term contract to sign and no exit penalty.</p><!-- /wp:paragraph -->
+<!-- wp:heading {"level":3,"fontSize":"large"} --><h3 class="wp-block-heading has-large-font-size">Flexible plans</h3><!-- /wp:heading -->
+<!-- wp:paragraph {"style":{"color":{"text":"#55708A"}}} --><p style="color:#55708A">Flexible monthly and term plans available, including 1-year and 3-year commitment options.</p><!-- /wp:paragraph -->
 </div>
 <!-- /wp:group -->
 <!-- wp:group {"className":"nv-card","style":{"spacing":{"padding":"1.85rem","blockGap":"0.7rem"}},"layout":{"type":"constrained"}} -->
@@ -48,8 +48,8 @@
 <!-- wp:group {"className":"nv-card","style":{"spacing":{"padding":"1.85rem","blockGap":"0.7rem"}},"layout":{"type":"constrained"}} -->
 <div class="wp-block-group nv-card" style="padding:1.85rem">
 <!-- wp:html --><span class="nv-icon"><svg class="nv-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg></span><!-- /wp:html -->
-<!-- wp:heading {"level":3,"fontSize":"large"} --><h3 class="wp-block-heading has-large-font-size">14-day free trial</h3><!-- /wp:heading -->
-<!-- wp:paragraph {"style":{"color":{"text":"#55708A"}}} --><p style="color:#55708A">Try NovaVolt for 14 days with no credit card required before you commit to a plan.</p><!-- /wp:paragraph -->
+<!-- wp:heading {"level":3,"fontSize":"large"} --><h3 class="wp-block-heading has-large-font-size">Fast, guided setup</h3><!-- /wp:heading -->
+<!-- wp:paragraph {"style":{"color":{"text":"#55708A"}}} --><p style="color:#55708A">A straightforward path to go live, with your numbers ported and your call flows configured.</p><!-- /wp:paragraph -->
 </div>
 <!-- /wp:group -->
 <!-- wp:group {"className":"nv-card","style":{"spacing":{"padding":"1.85rem","blockGap":"0.7rem"}},"layout":{"type":"constrained"}} -->

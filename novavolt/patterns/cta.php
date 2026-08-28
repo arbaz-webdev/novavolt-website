@@ -22,7 +22,7 @@
 			<div class="wp-block-button is-style-fill"><a class="wp-block-button__link has-navy-color has-text-color has-background wp-element-button" style="background-color:#ffffff" href="tel:+18004303317">Call (800) 430-3317</a></div>
 			<!-- /wp:button -->
 			<!-- wp:button {"textColor":"base","className":"is-style-outline","style":{"border":{"color":"rgba(255,255,255,0.5)"}}} -->
-			<div class="wp-block-button is-style-outline"><a class="wp-block-button__link has-base-color has-text-color wp-element-button" style="border-color:rgba(255,255,255,0.5)" href="/contact/">Contact us</a></div>
+			<div class="wp-block-button is-style-outline"><a class="wp-block-button__link has-base-color has-text-color wp-element-button" style="border-color:rgba(255,255,255,0.5)" href="/contact/">Request a Demo</a></div>
 			<!-- /wp:button -->
 		</div>
 		<!-- /wp:buttons -->

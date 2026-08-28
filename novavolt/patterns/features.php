@@ -21,7 +21,7 @@
 			<!-- wp:list {"className":"nv-checklist","style":{"typography":{"lineHeight":"2","fontSize":"1.05rem"},"spacing":{"padding":{"left":"0"}}}} -->
 			<ul class="wp-block-list nv-checklist" style="line-height:2;font-size:1.05rem;padding-left:0;list-style:none">
 				<!-- wp:list-item --><li>✓ &nbsp;Free number porting with a smooth, hassle-free transition</li><!-- /wp:list-item -->
-				<!-- wp:list-item --><li>✓ &nbsp;No setup fees, and you can cancel anytime</li><!-- /wp:list-item -->
+				<!-- wp:list-item --><li>✓ &nbsp;No setup fees, with flexible monthly and term plans</li><!-- /wp:list-item -->
 				<!-- wp:list-item --><li>✓ &nbsp;AI that answers and routes every call, 24/7</li><!-- /wp:list-item -->
 				<!-- wp:list-item --><li>✓ &nbsp;Unlimited calling across the U.S. and Canada</li><!-- /wp:list-item -->
 			</ul>
@@ -46,8 +46,8 @@
 					<div class="wp-block-column">
 						<!-- wp:group {"style":{"spacing":{"padding":"1.25rem","blockGap":"0.25rem"},"border":{"radius":"14px"},"color":{"background":"rgba(255,255,255,0.08)"}},"layout":{"type":"constrained"}} -->
 						<div class="wp-block-group has-background" style="border-radius:14px;background:rgba(255,255,255,0.08);padding:1.25rem">
-							<!-- wp:paragraph {"style":{"typography":{"fontSize":"2rem","fontWeight":"800"},"color":{"text":"#ffffff"}}} --><p style="color:#ffffff;font-size:2rem;font-weight:800">14-day</p><!-- /wp:paragraph -->
-							<!-- wp:paragraph {"style":{"color":{"text":"rgba(255,255,255,0.7)"},"typography":{"fontSize":"0.85rem"}}} --><p style="color:rgba(255,255,255,0.7);font-size:0.85rem">Free trial, no card</p><!-- /wp:paragraph -->
+							<!-- wp:paragraph {"style":{"typography":{"fontSize":"2rem","fontWeight":"800"},"color":{"text":"#ffffff"}}} --><p style="color:#ffffff;font-size:2rem;font-weight:800">99.99%</p><!-- /wp:paragraph -->
+							<!-- wp:paragraph {"style":{"color":{"text":"rgba(255,255,255,0.7)"},"typography":{"fontSize":"0.85rem"}}} --><p style="color:rgba(255,255,255,0.7);font-size:0.85rem">Uptime</p><!-- /wp:paragraph -->
 						</div>
 						<!-- /wp:group -->
 					</div>

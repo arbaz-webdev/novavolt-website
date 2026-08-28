@@ -15,9 +15,9 @@
 <div class="wp-block-group alignwide">
 <!-- wp:paragraph {"className":"nv-chip"} --><p class="nv-chip">No setup fees</p><!-- /wp:paragraph -->
 <!-- wp:paragraph {"className":"nv-chip"} --><p class="nv-chip">Free number porting</p><!-- /wp:paragraph -->
-<!-- wp:paragraph {"className":"nv-chip"} --><p class="nv-chip">Cancel anytime</p><!-- /wp:paragraph -->
+<!-- wp:paragraph {"className":"nv-chip"} --><p class="nv-chip">Flexible plans</p><!-- /wp:paragraph -->
 <!-- wp:paragraph {"className":"nv-chip"} --><p class="nv-chip">Dallas-based support</p><!-- /wp:paragraph -->
-<!-- wp:paragraph {"className":"nv-chip"} --><p class="nv-chip">14-day free trial</p><!-- /wp:paragraph -->
+<!-- wp:paragraph {"className":"nv-chip"} --><p class="nv-chip">Fast, guided setup</p><!-- /wp:paragraph -->
 </div>
 <!-- /wp:group -->
 </section>

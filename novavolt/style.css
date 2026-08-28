@@ -7,7 +7,7 @@ Description: Custom enterprise block theme for NovaVolt Systems — modern busin
 Requires at least: 6.4
 Tested up to: 6.6
 Requires PHP: 7.4
-Version: 4.0.4
+Version: 4.1.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: novavolt
@@ -858,3 +858,11 @@ p.nv-democaption[style*="55708A"]{color:#44607C!important}
    sits over the gradient), but against the raw gradient stop it reads 4.11.
    #155A94 clears 4.5 either way, so the result is unambiguous. */
 .nv-eyebrow2{color:#155A94}
+
+
+/* 4.1.0 — "Illustrative example" label required above every demo visual
+   (Milestone 4 Final Corrections, general rule 1). #44607C clears 4.5:1 on
+   white, on the surface tint and on the hero gradient's darkest region. */
+.nv-demolabel{margin:0 0 .55rem;font-size:.72rem;font-weight:700;letter-spacing:.11em;
+ text-transform:uppercase;color:#44607C}
+.nv-dhero .nv-demolabel{color:rgba(255,255,255,.72)}

@@ -33,8 +33,8 @@
 	<!-- /wp:column -->
 	<!-- wp:column -->
 	<div class="wp-block-column nv-stat">
-		<!-- wp:heading {"textAlign":"center","level":3,"style":{"typography":{"fontSize":"3rem","fontWeight":"800"}}} --><h3 class="wp-block-heading has-text-align-center" style="font-size:3rem;font-weight:800">14-day</h3><!-- /wp:heading -->
-		<!-- wp:paragraph {"align":"center","style":{"color":{"text":"rgba(255,255,255,0.65)"}}} --><p class="has-text-align-center" style="color:rgba(255,255,255,0.65)">Free trial, no card</p><!-- /wp:paragraph -->
+		<!-- wp:heading {"textAlign":"center","level":3,"style":{"typography":{"fontSize":"3rem","fontWeight":"800"}}} --><h3 class="wp-block-heading has-text-align-center" style="font-size:3rem;font-weight:800">99.99%</h3><!-- /wp:heading -->
+		<!-- wp:paragraph {"align":"center","style":{"color":{"text":"rgba(255,255,255,0.65)"}}} --><p class="has-text-align-center" style="color:rgba(255,255,255,0.65)">Uptime</p><!-- /wp:paragraph -->
 	</div>
 	<!-- /wp:column -->
 	</div>
