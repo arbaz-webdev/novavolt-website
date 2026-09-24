@@ -21,7 +21,7 @@
 <div class="wp-block-group nv-card" style="padding:1.85rem">
 <!-- wp:html --><span class="nv-icon"><svg class="nv-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6.5 3h3l1.6 4-2.1 1.5a12.5 12.5 0 0 0 5.5 5.5L16 11.9l4 1.6v3a2 2 0 0 1-2.2 2A16.6 16.6 0 0 1 3.5 5.2 2 2 0 0 1 5.5 3z"/></svg></span><!-- /wp:html -->
 <!-- wp:heading {"level":3,"fontSize":"large"} --><h3 class="wp-block-heading has-large-font-size">Business Phone Systems</h3><!-- /wp:heading -->
-<!-- wp:paragraph {"style":{"color":{"text":"#5B6A7F"}}} --><p style="color:#5B6A7F">A cloud phone system that works anywhere your team does — desk, mobile, or browser, with numbers in every U.S. area code.</p><!-- /wp:paragraph -->
+<!-- wp:paragraph {"style":{"color":{"text":"#5B6A7F"}}} --><p style="color:#5B6A7F">A cloud phone system that works anywhere your team does — desk, mobile, or browser, with local and toll-free number options available across the U.S.</p><!-- /wp:paragraph -->
 <!-- wp:paragraph --><p><a href="/services/business-phone-systems/" style="font-weight:600">Learn more →</a></p><!-- /wp:paragraph -->
 </div>
 <!-- /wp:group -->
@@ -29,7 +29,7 @@
 <div class="wp-block-group nv-card" style="padding:1.85rem">
 <!-- wp:html --><span class="nv-icon"><svg class="nv-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a15 15 0 0 1 0 18a15 15 0 0 1 0-18z"/></svg></span><!-- /wp:html -->
 <!-- wp:heading {"level":3,"fontSize":"large"} --><h3 class="wp-block-heading has-large-font-size">VoIP &amp; Unified Communications</h3><!-- /wp:heading -->
-<!-- wp:paragraph {"style":{"color":{"text":"#5B6A7F"}}} --><p style="color:#5B6A7F">Crystal-clear voice, video, and conferencing on one reliable network — no legacy hardware, no dropped calls.</p><!-- /wp:paragraph -->
+<!-- wp:paragraph {"style":{"color":{"text":"#5B6A7F"}}} --><p style="color:#5B6A7F">Crystal-clear voice, video, and conferencing on one reliable network — without the legacy hardware.</p><!-- /wp:paragraph -->
 <!-- wp:paragraph --><p><a href="/services/voip-unified-communications/" style="font-weight:600">Learn more →</a></p><!-- /wp:paragraph -->
 </div>
 <!-- /wp:group -->
@@ -37,7 +37,7 @@
 <div class="wp-block-group nv-card" style="padding:1.85rem">
 <!-- wp:html --><span class="nv-icon"><svg class="nv-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="4" y="8" width="16" height="11" rx="3"/><path d="M12 8V4.5M9.5 13h.01M14.5 13h.01M9.5 16h5"/><circle cx="12" cy="3.5" r="1.2"/></svg></span><!-- /wp:html -->
 <!-- wp:heading {"level":3,"fontSize":"large"} --><h3 class="wp-block-heading has-large-font-size">AI Receptionist &amp; Automation</h3><!-- /wp:heading -->
-<!-- wp:paragraph {"style":{"color":{"text":"#5B6A7F"}}} --><p style="color:#5B6A7F">An always-on AI answers, routes, and books appointments 24/7 — so every caller reaches the right place instantly.</p><!-- /wp:paragraph -->
+<!-- wp:paragraph {"style":{"color":{"text":"#5B6A7F"}}} --><p style="color:#5B6A7F">Ready to answer. Ready to engage. An AI receptionist can help answer, route, and book appointments around the clock.</p><!-- /wp:paragraph -->
 <!-- wp:paragraph --><p><a href="/services/ai-receptionist-automation/" style="font-weight:600">Learn more →</a></p><!-- /wp:paragraph -->
 </div>
 <!-- /wp:group -->

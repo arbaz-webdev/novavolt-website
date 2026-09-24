@@ -49,3 +49,43 @@
   }, { passive: true });
   update();
 })();
+
+(function () {
+  'use strict';
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* Mobile menu: keep Services collapsed until the visitor selects it. */
+  var servicesItem = document.querySelector('.wp-block-navigation__responsive-container .wp-block-navigation-submenu > a[href="/services/"]');
+  if (servicesItem) {
+    var servicesGroup = servicesItem.parentElement;
+    servicesGroup.classList.add('nv-mobile-services');
+    servicesItem.setAttribute('aria-expanded', 'false');
+    servicesItem.addEventListener('click', function (event) {
+      if (!window.matchMedia('(max-width: 781px)').matches || !servicesGroup.closest('.is-menu-open')) return;
+      event.preventDefault();
+      var isOpen = servicesGroup.classList.toggle('nv-mobile-services-open');
+      servicesItem.setAttribute('aria-expanded', String(isOpen));
+    });
+    var menuOpen = document.querySelector('.wp-block-navigation__responsive-container-open');
+    if (menuOpen) menuOpen.addEventListener('click', function () {
+      servicesGroup.classList.remove('nv-mobile-services-open');
+      servicesItem.setAttribute('aria-expanded', 'false');
+    });
+  }
+
+  /* Small Back to Top button after the visitor scrolls down. */
+  var backToTop = document.createElement('button');
+  backToTop.type = 'button';
+  backToTop.className = 'nv-backtotop';
+  backToTop.setAttribute('aria-label', 'Back to top');
+  backToTop.textContent = '↑';
+  document.body.appendChild(backToTop);
+  function updateBackToTop() {
+    backToTop.classList.toggle('nv-visible', window.scrollY > 400);
+  }
+  window.addEventListener('scroll', updateBackToTop, { passive: true });
+  updateBackToTop();
+  backToTop.addEventListener('click', function () {
+    window.scrollTo({ top: 0, behavior: reduce ? 'instant' : 'smooth' });
+  });
+})();

@@ -375,7 +375,7 @@ add_filter( 'wp_check_filetype_and_ext', function ( $data, $file, $filename, $mi
  * The metric-matched fallback stops the swap from shifting layout (CLS).
  */
 function novavolt_self_hosted_font() {
-	$font = 'https://lightyellow-kingfisher-780485.hostingersite.com/wp-content/uploads/2026/08/inter-variable-latin.woff2';
+	$font = 'https://novavoltsystems.com/wp-content/uploads/2026/08/inter-variable-latin.woff2';
 	?>
 	<link rel="preload" href="<?php echo esc_url( $font ); ?>" as="font" type="font/woff2" crossorigin>
 	<style id="novavolt-font">

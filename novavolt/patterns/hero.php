@@ -15,13 +15,13 @@
 <!-- wp:column {"verticalAlignment":"center","width":"54%"} -->
 <div class="wp-block-column is-vertically-aligned-center" style="flex-basis:54%">
 <!-- wp:paragraph {"className":"nv-eyebrow2"} -->
-<p class="nv-eyebrow2">AI-Powered Business Communications</p>
+<p class="nv-eyebrow2">Business Communications</p>
 <!-- /wp:paragraph -->
 <!-- wp:heading {"level":1} -->
-<h1 class="wp-block-heading">Every call answered. Every customer engaged.</h1>
+<h1 class="wp-block-heading">Business communications <span class="nv-grad-dark">built for the way you work.</span></h1>
 <!-- /wp:heading -->
 <!-- wp:paragraph {"style":{"color":{"text":"#3A5570"},"typography":{"fontSize":"1.15rem","lineHeight":"1.65"}}} -->
-<p style="color:#3A5570;font-size:1.15rem;line-height:1.65">NovaVolt brings your phone system, VoIP, messaging, and a 24/7 AI receptionist into one clean platform — enterprise-grade communication built for small and mid-sized teams.</p>
+<p style="color:#3A5570;font-size:1.15rem;line-height:1.65">Business phone systems, VoIP, messaging, and AI-powered communications in one modern solution for growing businesses.</p>
 <!-- /wp:paragraph -->
 <!-- wp:buttons {"style":{"spacing":{"blockGap":"0.9rem","margin":{"top":"1.4rem"}}}} -->
 <div class="wp-block-buttons" style="margin-top:1.4rem">

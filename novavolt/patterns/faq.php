@@ -20,7 +20,7 @@
 
 		<!-- wp:details {"style":{"color":{"background":"#ffffff"},"border":{"radius":"12px","color":"#E2E8F0","width":"1px"},"spacing":{"padding":{"top":"1.1rem","bottom":"1.1rem","left":"1.4rem","right":"1.4rem"}}}} -->
 		<details class="wp-block-details has-border-color" style="border-color:#E2E8F0;border-width:1px;border-radius:12px;background-color:#ffffff;padding:1.1rem 1.4rem"><summary style="font-weight:600">How long does it take to get set up?</summary>
-		<!-- wp:paragraph {"style":{"color":{"text":"#43526B"}}} --><p style="color:#43526B">Most businesses are live within a few days. We port your existing numbers, configure your call flows, and train your team — no hardware required.</p><!-- /wp:paragraph -->
+		<!-- wp:paragraph {"style":{"color":{"text":"#43526B"}}} --><p style="color:#43526B">Setup time varies by your needs. We’ll port your numbers, configure your call flows, and help get your team ready, with a timeline based on your specific setup.</p><!-- /wp:paragraph -->
 		</details>
 		<!-- /wp:details -->
 
@@ -38,7 +38,7 @@
 
 		<!-- wp:details {"style":{"color":{"background":"#ffffff"},"border":{"radius":"12px","color":"#E2E8F0","width":"1px"},"spacing":{"padding":{"top":"1.1rem","bottom":"1.1rem","left":"1.4rem","right":"1.4rem"}}}} -->
 		<details class="wp-block-details has-border-color" style="border-color:#E2E8F0;border-width:1px;border-radius:12px;background-color:#ffffff;padding:1.1rem 1.4rem"><summary style="font-weight:600">Is there a long-term contract?</summary>
-		<!-- wp:paragraph {"style":{"color":{"text":"#43526B"}}} --><p style="color:#43526B">No lock-in. Plans are month-to-month, and you can scale users up or down as your business changes.</p><!-- /wp:paragraph -->
+		<!-- wp:paragraph {"style":{"color":{"text":"#43526B"}}} --><p style="color:#43526B">We offer monthly, 1-year, and 3-year plan options. We’ll help you choose the term that fits your business.</p><!-- /wp:paragraph -->
 		</details>
 		<!-- /wp:details -->
 

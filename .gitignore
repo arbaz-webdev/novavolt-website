@@ -9,6 +9,11 @@ desktop.ini
 
 # Builds / archives
 *.zip
+*.gz
+*.sql
+*.wpress
+wp-config.php
+wp-content/uploads/
 node_modules/
 
 # Client source docs (keep out of public repo)
