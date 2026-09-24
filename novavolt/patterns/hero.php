@@ -34,12 +34,15 @@
 </div>
 <!-- /wp:buttons -->
 <!-- wp:paragraph {"style":{"color":{"text":"#55708A"},"typography":{"fontSize":"0.88rem"},"spacing":{"margin":{"top":"1.1rem"}}}} -->
-<p style="color:#55708A;font-size:0.88rem;margin-top:1.1rem">No hardware to buy · Live in days · U.S.-based support</p>
+<p style="color:#55708A;font-size:0.88rem;margin-top:1.1rem">No hardware to buy · Free number porting · Dallas-based support</p>
 <!-- /wp:paragraph -->
 </div>
 <!-- /wp:column -->
 <!-- wp:column {"width":"46%"} -->
 <div class="wp-block-column" style="flex-basis:46%">
+<!-- wp:paragraph {"className":"nv-demolabel"} -->
+<p class="nv-demolabel">Illustrative example</p>
+<!-- /wp:paragraph -->
 <!-- wp:group {"className":"nv-mockwrap","layout":{"type":"constrained"}} -->
 <div class="wp-block-group nv-mockwrap">
 <!-- wp:paragraph {"className":"nv-chip nv-float nv-float-tr"} -->
