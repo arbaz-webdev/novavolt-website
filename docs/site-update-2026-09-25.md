@@ -27,11 +27,16 @@ The repository's earlier `Milestone-4-Report.md` describes staging QA and lists 
 
 The earlier staging form, cross-browser, and link checks were not treated as a new production sign-off.
 
+## Editing handoff and ownership
+
+The [written editing guide](editing-guide.md) and [narrated walkthrough video](basic-editing-walkthrough.mp4) are available. The video uses captured WordPress screens to show the basic Pages → Edit → Save → Review flow.
+
+The site owner reports that no paid plugins are used. Hosting and domain billing are managed by the client, so renewal dates belong in the client's account records.
+
 ## Remaining handoff items
 
 1. Have the host investigate the intermittent cPanel default-page response for the Home URL, WordPress.org connection timeout, and failed PHP loopback check. Deploy the updated reusable PHP patterns after the loopback issue is resolved.
-2. Confirm paid service/license owners and renewal dates in the billing accounts.
+2. Have the client confirm hosting and domain renewal details and any external service subscriptions in its own account records.
 3. Resolve the Milestone 4 host and content items above, complete production QA, and obtain final client sign-off.
-4. Record a narrated editing walkthrough. The written [editing guide](editing-guide.md) is available now.
 
 The visible copy and interaction edits are live. The items above remain open for full handoff.
