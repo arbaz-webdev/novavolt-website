@@ -7,7 +7,7 @@ Description: Custom enterprise block theme for NovaVolt Systems — modern busin
 Requires at least: 6.4
 Tested up to: 6.6
 Requires PHP: 7.4
-Version: 4.1.1
+Version: 4.1.2
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: novavolt
@@ -921,4 +921,19 @@ p.nv-democaption[style*="55708A"]{color:#44607C!important}
 .nv-backtotop:focus-visible { outline: 3px solid #86CDEA; outline-offset: 3px; }
 @media (prefers-reduced-motion: reduce) {
   .nv-backtotop { transition: none; }
+}
+
+/* Keep the longer business-communications headline readable on phones. */
+@media (max-width: 520px) {
+  .nv-hero2 {
+    padding: clamp(1.25rem, 5vw, 2rem) !important;
+  }
+  .nv-hero2 h1 {
+    font-size: clamp(1.625rem, 7.1vw, 2.375rem) !important;
+    line-height: 1.15 !important;
+    word-break: normal;
+    overflow-wrap: normal;
+    hyphens: none;
+    text-wrap: balance;
+  }
 }
